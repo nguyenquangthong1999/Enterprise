@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Account;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use App\Student;
 
 
 class CoordinatorController extends Controller
@@ -25,7 +26,7 @@ class CoordinatorController extends Controller
         $coordinator = DB::table('cordinator')->get();
         
         //return view('admin.faculity.manage_faculty',['faculity' => $faculity] );
-        return view('admin.coordinator.function.manage_coordinator')->with('coordinator',$coordinator);
+        return view('admin.coordinator.manage_coordinator')->with('coordinator',$coordinator);
     }
 
     /**
@@ -69,7 +70,7 @@ class CoordinatorController extends Controller
         $coordinator = DB::table('cordinator')->where('cordinator_id', $id)->first();
         
       
-        return view('admin.coordinator.function.edit_cordinator' , compact('coordinator')) ->with('faculity',$faculity);
+        return view('admin.coordinator.edit_cordinator' , compact('coordinator')) ->with('faculity',$faculity);
     }
 
     public function editProcess(Request $request, $id)
@@ -107,7 +108,16 @@ class CoordinatorController extends Controller
     // {
     //     return view ('admin.contributions.comment');
     // }
+
+    // Coordinator Front End Function
     public function CoordinatorDashboard(){
-        return view('admin.coordinator.dashboardCoordinator');
+        return view('coordinatorFE.dashboardCoordinator');
     }
+
+    public function viewcontribution(){
+        $getData = Student::all();
+        // dd($getData);
+        return view('coordinatorFE.function.view_contribution',compact('getData'));
+    }
+
 }

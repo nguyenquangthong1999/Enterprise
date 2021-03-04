@@ -58,6 +58,7 @@
 
     @yield('admin_content')
     @yield('student_content')
+    @yield('coordinator_content')
     <!-- Main content -->
     <!-- /.content -->
   </div>

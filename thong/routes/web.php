@@ -54,3 +54,6 @@ Route::post('addcoordinator','CoordinatorController@storedCoordinator');
 Route::get('management_coordinator/edit_coordinator/{id}', 'CoordinatorController@edit');
 Route::patch('management_coordinator/{id}', 'CoordinatorController@editProcess');
 Route::delete('management_coordinator/{id}','CoordinatorController@delete');
+
+// Coordinator Front End Function
+Route::get('viewContribution','CoordinatorController@viewcontribution')->name('VIEW_CONTRIBUTION');

@@ -35,7 +35,7 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="" class="nav-link">
+                    <a href="{{Route('VIEW_CONTRIBUTION')}}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>View Contribution</p>
                     </a>
@@ -63,7 +63,7 @@
     <!-- /.sidebar -->
   </aside>
 
-@section('student_content')
+@section('coordinator_content')
 <div class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
