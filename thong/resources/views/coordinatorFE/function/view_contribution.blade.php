@@ -19,10 +19,11 @@
 <section class="content">
 
   <!-- Default box -->
-  <div class="card card-solid">
-    <div class="card-body pb-0">
-      <div class="row d-flex align-items-stretch">
-        @foreach($getData as $key => $getDatas)
+  <div class="card card-solid main3">
+    @foreach($getData as $key => $getDatas)
+    <div class="card-body pb-0 main1">  
+      <div class="row d-flex align-items-stretch main2">
+        {{-- @foreach($getData as $key => $getDatas) --}}
         <div class="col-12 col-sm-6 col-md-6 d-flex align-items-stretch">
           <div class="card bg-light">
             <div class="card-header text-muted border-bottom-0">
@@ -31,21 +32,25 @@
             <div class="card-body pt-0">
               <div class="row">
                 <div class="col-7">
-                  <h2 class="lead"><b>{{$getDatas->student_uploadfile}}</b></h2>
+                  <input type="hidden" id="getId" value="{{$getDatas->student_id}}">
+                  <input type="hidden" id="getURL" value="{{url('executeComment/'.$getDatas->student_id)}}">
+                  <h2 class="lead"><b id="file1">{{$getDatas->student_uploadfile}}</b></h2>
                   <p class="text-muted text-sm"><b>Description: </b>{{$getDatas->student_description}}</p>
                   <p class="text-muted text-sm"><b>Date Upload: </b>{{$getDatas->created_at}}</p>
                 </div>
                 <div class="col-5 text-center">
-                  {{-- <img src="../../dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid"> --}}
                   <img src="{{asset("imageStudent/$getDatas->student_uploadimage")}}" class="img-circle img-fluid" alt="">
                 </div>
               </div>
             </div>
             <div class="card-footer">
               <div class="text-right">
-                <a href="#" class="btn btn-sm bg-teal">
+                <button type="button" class="btn btn-sm bg-teal" data-toggle="modal" data-target="#addcomment">
+                  <i class="fas fa-comments btnCmt"></i>
+                </button>
+                {{-- <a class="btn btn-sm bg-teal btnCmt">
                   <i class="fas fa-comments"></i>
-                </a>
+                </a> --}}
                 <a href="#" class="btn btn-sm btn-primary">
                   <i class="fas fa-user"></i> View Profile
                 </a>
@@ -53,12 +58,56 @@
             </div>
           </div>
         </div>
-        @endforeach
+        {{-- @endforeach --}}
       </div>
     </div>
-    <!-- /.card-body -->
+
+    <div class="callout callout-info templateComment">
+      <form action="" method="POST">
+        @csrf
+      <div class="form-group">
+        <h5>
+          <i class="fas fa-file-alt"></i>
+          <input type="hidden" class="input2" name="student_id" value="">
+          File Upload: <h3 class="input1"></h3>
+        </h5>
+      </div>
+      <div class="form-group">
+        <label>Comment :</label>
+        <textarea class="form-control" rows="8" placeholder="Input Your Comment" name="comment"></textarea>
+        <select class="form-control" id="grade">
+          <option value="0">Set grade for assignment</option>
+          <option value="1">Fail</option>
+          <option value="2">Pass</option>
+          <option value="3">Merit</option>
+          <option value="4">Distinction</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-secondary btnClose">Close</button>
+      <button type="button" class="btn btn-info btn-add-comment btnComment">Comment  <i class="fas fa-comments"></i> </button>
+      </form>
+    </div>
+    @endforeach
+
   </div>
 
 </section>
-
+<style>
+  .templateComment{
+    width: 500px;
+    height: 500px;
+    /* background-color: red; */
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    /* text-align: center; */
+  }
+  #grade{
+    margin-top: 10px;
+  }
+</style>
 @endsection

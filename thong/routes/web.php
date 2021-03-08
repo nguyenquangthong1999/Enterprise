@@ -57,3 +57,4 @@ Route::delete('management_coordinator/{id}','CoordinatorController@delete');
 
 // Coordinator Front End Function
 Route::get('viewContribution','CoordinatorController@viewcontribution')->name('VIEW_CONTRIBUTION');
+Route::post('executeComment/{student_id}','CoordinatorController@executecomment');

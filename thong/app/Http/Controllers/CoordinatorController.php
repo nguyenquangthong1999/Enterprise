@@ -7,7 +7,7 @@ use App\Account;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
 use App\Student;
-
+use App\Comment;
 
 class CoordinatorController extends Controller
 {
@@ -38,7 +38,7 @@ class CoordinatorController extends Controller
     {
         $faculity = DB::table('faculity')->get();
         // $data = Account::all();
-        return view('admin.coordinator.function.create_coordinator') ->with('faculity',$faculity);
+        return view('admin.coordinator.create_coordinator') ->with('faculity',$faculity);
     }
 
     public function storedCoordinator(Request $request)
@@ -116,8 +116,22 @@ class CoordinatorController extends Controller
 
     public function viewcontribution(){
         $getData = Student::all();
+        // $getStudentId = Student::find($student_id);
         // dd($getData);
         return view('coordinatorFE.function.view_contribution',compact('getData'));
     }
 
+    public function executecomment(Request $request){
+        // $getData = Student::all();
+        // $getStudentId = Student::where('student_id',$getData['student_id'])->get();
+        // dd($getStudentId);
+        // $data = $request->all();
+        $setCmt123 = new Comment;
+        $setCmt123->comment = $request->comment;
+        $setCmt123->student_uploadfile = $request->student_uploadfile;
+        $setCmt123->student_id = $request->student_id;
+        $setCmt123->comment = $request->comment;
+        $setCmt123->grade =  $request->grade;
+        $setCmt123->save();
+    }
 }

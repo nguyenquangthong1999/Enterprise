@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/summernote/summernote-bs4.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -98,5 +99,76 @@
 <script src="{{asset('AdminTemplate/dist/js/adminlte.js')}}"></script>
 <script src="{{asset('AdminTemplate/dist/js/pages/dashboard.js')}}"></script>
 <script src="{{asset('AdminTemplate/dist/js/demo.js')}}"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+  $(document).ready(function(){
+    var aa = $('.templateComment').hide();
+    $(".btnCmt").click(function(){
+      var getValue = $(this).closest(".main1").find("#file1").text(); //get student_uploadfile
+      // console.log(getValue);
+      var ganValue = $(this).closest(".main3").find(".input1").text(getValue);
+      var getValue2 = $(this).closest(".main1").find("#getId").val(); //get student_id
+      // console.log(getValue2);
+      var ganValue2 =  $(this).closest(".main3").find(".input2").val(getValue2);
+      var getValue3 = $(this).closest(".main1").find("#getURL").val(); //get url action
+      // console.log(getValue3);
+      var ganValue3 =  $(this).closest(".main3").find(".templateComment form").attr('action',getValue3);
+      // console.log(ganValue3);
+      if($('.templateComment').is(":hidden")){
+        $(".templateComment").show();
+      }
+    });
+
+    $(".btnClose").click(function(){
+      $('.templateComment').hide();
+      $(this).closest(".templateComment").find("textarea").val('').change(); //dua textarea comment ve rong
+      $(this).closest(".templateComment").find("#grade").val('0');  //dua grade ve ban dau
+    });
+
+    $(".btnComment").click(function(){
+      var student_uploadfile = $(this).closest(".templateComment").find(".input1").text();
+      // console.log(student_uploadfile);
+      var student_id = $(this).closest(".templateComment").find(".input2").val();
+      // console.log(student_id);
+      var url = $(this).closest(".main3").find("form").attr('action');
+      // console.log(url);
+      var comment = $(this).closest(".templateComment").find("textarea").val();
+      // console.log(comment);
+      var _token = $('input[name="_token"]').val();
+      var grade = $(this).closest(".templateComment").find("#grade option:selected").val()
+      console.log(grade);
+        if(comment != '' && grade != '0'){
+          $.ajax({
+          url: url,
+          method: 'POST',
+          data:{
+              student_uploadfile,
+              student_id,
+              _token,
+              comment,
+              grade,
+              },
+              success:function(data){
+                swal({
+                  title: "Thanks for your comment!",
+                  icon: "success",
+                });
+                  $("textarea").val('').change(); //dua textarea comment ve rong
+                  $("#grade").val('0');
+                  $('.templateComment').hide();
+              }
+          });
+        }else{
+          swal({
+                  title: "Please comment and set grade for assignment!",
+                  icon: "warning",
+                });
+          // swal("Please write comment and set grade for assignment");
+        }
+
+    });
+
+  })
+</script>
 </body>
 </html>
