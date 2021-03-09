@@ -11,9 +11,9 @@ use App\Account;
 
 class AdminController extends Controller
 {
-    public function getPageForAdmin(){
-        return view('loginadmin');
-    }
+    // public function getPageForAdmin(){
+    //     return view('loginadmin');
+    // }
 
     public function getLogin(){
         return view('loginadmin');

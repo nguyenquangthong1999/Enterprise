@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Admin</title>
@@ -26,13 +26,7 @@
 					<span class="login100-form-title p-b-43">
 						Login Admin
 					</span>
-					<?php
-						$message = Session::get('message');
-						if ($message){
-							echo "<center><font color=red>$message</font></center>";
-							Session::put('message',null);
-						}
-					?>
+					
 					<form action="{{URL('executeLoginAdmin')}}" method="post">
 						@csrf
 						<div class="wrap-input100">
@@ -63,34 +57,7 @@
 							</div>
 						</div>
 						<div>
-							{{-- <center>
-							<div class="g-recaptcha" data-sitekey="6LfJHscZAAAAAN350HaU3DFjM7fIjQLQrMFhQT51"></div>
-							<br/>
-							@if($errors->has('g-recaptcha-response'))
-							<span class="invalid-feedback" style="display:block">
-								<strong>{{$errors->first('g-recaptcha-response')}}</strong>
-							</span>
-							@endif
-							</center> --}}
-						</div>
-						<div class="container-login100-form-btn">
-							<input class="login100-form-btn" type="submit" value="Submit">
-						</div>
 						
-						<div class="text-center p-t-46 p-b-20">
-							<span class="txt2">
-								or sign up using
-							</span>
-						</div>
-
-						<div class="login100-form-social flex-c-m">
-							<a href="" class="login100-form-social-item flex-c-m bg1 m-r-5">
-								<i class="fa fa-facebook-f" aria-hidden="true"></i>
-							</a>
-
-							{{-- <a href="{{route('TWITTER')}}" class="login100-form-social-item flex-c-m bg2 m-r-5">
-								<i class="fa fa-twitter" aria-hidden="true"></i>
-							</a> --}}
 
 							<a href="" class="login100-form-social-item flex-c-m bg3 m-r-5">
 								<i class="fa fa-google" aria-hidden="true"></i>
@@ -119,5 +86,104 @@
 	<script src="{{asset('BE/vendor/daterangepicker/daterangepicker.js')}}"></script>
 	<script src="{{asset('BE/vendor/countdowntime/countdowntime.js')}}"></script>
 	<script src="{{asset('BE/js/main.js')}}"></script>
+</body>
+</html> --}}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Log in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/fontawesome-free/css/all.min.css')}}">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{asset('AdminTemplate/dist/css/adminlte.min.css')}}">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Admin</b></a>
+  </div>
+  <!-- /.login-logo -->
+  <div class="card">
+    <div class="card-body login-card-body">
+      <p class="login-box-msg">Sign in to start your session</p>
+	  	<?php
+			$message = Session::get('message');
+			if ($message){
+				echo "<center><font color=red>$message</font></center>";
+				Session::put('message',null);
+			}
+		?>
+
+		<form action="{{URL('executeLoginAdmin')}}" method="post">
+			@csrf
+			<div class="input-group mb-3">
+			<input type="email" name="admin_email" class="form-control" placeholder="Email">
+			<div class="input-group-append">
+				<div class="input-group-text">
+				<span class="fas fa-envelope"></span>
+				</div>
+			</div>
+			</div>
+			<div class="input-group mb-3">
+			<input type="password" name="admin_password" class="form-control" placeholder="Password">
+			<div class="input-group-append">
+				<div class="input-group-text">
+				<span class="fas fa-lock"></span>
+				</div>
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-8">
+				<div class="icheck-primary">
+				<input type="checkbox" id="remember">
+				<label for="remember">
+					Remember Me
+				</label>
+				</div>
+			</div>
+			<!-- /.col -->
+			<div class="col-4">
+				<button type="submit" class="btn btn-primary btn-block">Sign In</button>
+			</div>
+			<!-- /.col -->
+			</div>
+      </form>
+
+      <div class="social-auth-links text-center mb-3">
+        <p>- OR -</p>
+        <a href="#" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
+        </a>
+        <a href="#" class="btn btn-block btn-danger">
+          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+        </a>
+      </div>
+      <!-- /.social-auth-links -->
+
+      <p class="mb-1">
+        <a href="forgot-password.html">I forgot my password</a>
+      </p>
+      <p class="mb-0">
+        <a href="register.html" class="text-center">Register a new membership</a>
+      </p>
+    </div>
+    <!-- /.login-card-body -->
+  </div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{{asset('AdminTemplate/plugins/jquery/jquery.min.js')}}"></script>
+<!-- Bootstrap 4 -->
+<script src="{{asset('AdminTemplate/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{asset('AdminTemplate/dist/js/adminlte.js')}}"></script>
+
 </body>
 </html>

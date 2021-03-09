@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/','AdminController@getPageForAdmin');
+// Homepage
+Route::get('/','AccountController@loginAccount');
 
 Route::get('admin','AdminController@getLogin')->name('ADMIN');
 Route::get('dashboardAdmin','AdminController@AdminDashboard')->name('DASHBOARD');
