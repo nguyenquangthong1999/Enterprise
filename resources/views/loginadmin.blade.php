@@ -94,7 +94,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Log in</title>
+  <title>Admin | Log in</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/fontawesome-free/css/all.min.css')}}">
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -103,10 +103,10 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background : no-repeat url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80'); background-size: cover;">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Admin</b></a>
+    <h1 style="text-shadow: 3px 3px #f1f1f1;">Admin</h1>
   </div>
   <!-- /.login-logo -->
   <div class="card">
@@ -155,23 +155,10 @@
 			</div>
       </form>
 
-      <div class="social-auth-links text-center mb-3">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-primary">
-          <i class="fab fa-facebook mr-2"></i> Sign in using Facebook
-        </a>
-        <a href="#" class="btn btn-block btn-danger">
-          <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
-        </a>
-      </div>
+      
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
-        <a href="forgot-password.html">I forgot my password</a>
-      </p>
-      <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
-      </p>
+     
     </div>
     <!-- /.login-card-body -->
   </div>
