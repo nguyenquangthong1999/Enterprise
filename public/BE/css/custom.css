@@ -40,7 +40,11 @@ html{
 .logo{
     width: 44px;
     height: 32px;
+<<<<<<< HEAD
     background-image: url(../images/bg.jpg);
+=======
+    background-image: url(../images/white-logo.png);
+>>>>>>> 16a64ec735f01a24406e1a8aebe7e56fe39d559d
     background-size: contain;
 }
 .menu-toggler{
