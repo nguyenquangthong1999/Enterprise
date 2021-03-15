@@ -13,7 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Homepage
-Route::get('/','AccountController@loginAccount');
+Route::get('/','AdminController@getIndex');
+Route::get('/account','AccountController@loginAccount');
 
 Route::get('admin','AdminController@getLogin')->name('ADMIN');
 Route::get('dashboardAdmin','AdminController@AdminDashboard')->name('DASHBOARD');

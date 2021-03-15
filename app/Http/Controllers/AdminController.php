@@ -22,7 +22,9 @@ class AdminController extends Controller
     public function AdminDashboard(){
         return view('admin.dashboardAdmin');
     }
-
+    public function getIndex(){
+        return view('dashboard');
+    }
     public function checkLoginForAdmin(Request $request){
         $data = $request->all();
         $admin_email = $request->admin_email;
