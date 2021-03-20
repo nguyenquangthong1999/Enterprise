@@ -20,7 +20,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- left column -->
-        <div class="col-md-8">
+        <div class="col col-lg-8 col-md-12 col-sm-12">
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
@@ -69,16 +69,63 @@
                 {{-- </center> --}}
               </div>
               <!-- /.card-body -->
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
+              <div class="">
+                <button type="submit" class="btn btn-primary ml-3" id="submit">Submit</button>
+              </div> 
             </form>
           </div>
           <!-- /.card -->
 
         </div>
+        <div class="col col-lg-4 d-md-12 d-sm-12 ">
+        @foreach($semester as $item)
+        <div class="card">
+          <ul class="list-group list-group-flush">
+            <div class="card-body">
+
+              <div class="form-group">
+                <label for="">Semester Name : </label>
+                <input class="form-control" value = "{{$item -> semester_name}}" disabled="disabled"></input>
+              </div>
+              <div class="form-group">
+                <label for="">Start Day :</label>
+                <input class="form-control" value = "{{$item -> start_date}}" disabled="disabled"></input>
+              </div>
+              <div class="form-group">
+                <label for="">Deadline :</label>
+                <input class="form-control" id="deadline" value = "{{$item -> end_date}}" disabled="disabled"></input>
+              </div>
+              <div class="form-group">
+                <label for="" id= message ></label>
+              </div>                    
+            </div>
+          </ul>
+        </div>
+        @endforeach
+      </div> 
       </div>
       <!-- /.row -->
     </div><!-- /.container-fluid -->
   </section>
+  <script>
+    var deadline = document.getElementById('deadline').value;
+    var message =  document.getElementById('message');
+
+    var date = new Date();
+
+    let year = date.getFullYear();
+    let month = (1 + date.getMonth()).toString().padStart(2, '0');
+    let day = date.getDate().toString().padStart(2, '0');
+  
+    var now = year + '-' + month + '-' + day;
+    var submit = document.getElementById('submit');
+    
+    if (now > deadline) {
+        submit.setAttribute("disabled", true);
+        submit.classList.remove("btn-primary");
+        submit.classList.add("btn-danger");
+        message.innerHTML = "Deadline is Time Out!!!"
+        message.style.color = "red";
+    }
+  </script>
 @endsection

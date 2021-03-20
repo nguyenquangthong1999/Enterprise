@@ -1,16 +1,15 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     text-decoration: none;
-    font-family: "Ubuntu",sans-serif;
+    font-family: "Ubuntu", sans-serif;
     box-sizing: border-box;
 }
-html{
+html {
     font-size: 62.5%;
     line-height: 1.6rem;
 }
-.navbar{
+.navbar {
     position: fixed;
     background: transparent;
     width: 100%;
@@ -19,17 +18,17 @@ html{
     z-index: 10;
     transition: 0.3s ease-in-out;
 }
-.sticky{
-    background:linear-gradient(-90deg,#61c3c8,#37bae9); 
+.sticky {
+    background: linear-gradient(-90deg, #61c3c8, #37bae9);
     padding: 18px 0;
 }
-.sticky .nav-menu a{
+.sticky .nav-menu a {
     color: #333;
 }
-.sticky .menu-toggler span{
+.sticky .menu-toggler span {
     background-color: #333;
 }
-.navbar .inner-width{
+.navbar .inner-width {
     max-width: 1300px;
     margin: auto;
     padding: 0 40px;
@@ -37,27 +36,19 @@ html{
     align-items: center;
     justify-content: space-between;
 }
-.logo{
+.logo {
     width: 44px;
     height: 32px;
-<<<<<<< HEAD
-    background-image: url(../images/bg.jpg);
-=======
-    background-image: url(../images/white-logo.png);
->>>>>>> 16a64ec735f01a24406e1a8aebe7e56fe39d559d
     background-size: contain;
-}
-.menu-toggler{
-    background: none;
     width: 30px;
-    border:none;
+    border: none;
     position: relative;
     outline: none;
     cursor: pointer;
     z-index: 10;
     display: none;
 }
-.menu-toggler span{
+.menu-toggler span {
     background-color: #fff;
     height: 3px;
     display: block;
@@ -65,71 +56,70 @@ html{
     position: relative;
     transition: 0.2s linear;
 }
-.nav-menu a{
-    color:#fff;
+.nav-menu a {
+    color: #fff;
     font-weight: 400;
     font-size: 1.8rem;
     margin-left: 30px;
     transition: 0.2s linear;
-    padding :16px;
+    padding: 16px;
     align-items: center;
-    background-color:#37bae9;
+    background-color: #37bae9;
     border-radius: 3px;
 }
-.nav-menu a:hover{
+.nav-menu a:hover {
     color: rgb(245, 53, 47);
 }
-#home{
+#home {
     height: 100vh;
     min-height: 500px;
     background: url(../images/bg.jpg) no-repeat center;
     background-size: cover;
     background-attachment: fixed;
 }
-#home .inner-width{
+#home .inner-width {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
     text-align: center;
 }
-.content{
+.content {
     color: #fff;
     width: 100%;
-    
 }
-h1{
+h1 {
     font-size: 6rem;
     margin: 0 0 60px;
 }
-h1::after{
-    content:  "Hi";
+h1::after {
+    content: "Hi";
     animation: textanim 15s linear infinite;
 }
-@keyframes textanim{
-    25%{
-        content:"We are Team 3"
+@keyframes textanim {
+    25% {
+        content: "We are Team 3";
     }
-    50%{
+    50% {
         content: " We Have 7 Member";
     }
-    75%{
-        content:" Here is Web Enterprise Project"
+    75% {
+        content: " Here is Web Enterprise Project";
     }
 }
-.sm a{
+.sm a {
     color: #fff;
     font-size: 2.3rem;
     margin: 0 10px;
     transition: 0.2s linear;
 }
-.sm a:hover{
+.sm a:hover {
     color: aqua;
 }
-.buttons{
+.buttons {
     margin-top: 60px;
 }
-.buttons a{
+.buttons a {
     display: inline-block;
     color: #37bae9;
     font-size: 1.5rem;
@@ -141,16 +131,15 @@ h1::after{
     border-radius: 6px;
 }
 .buttons a:hover,
-.buttons a:nth-child(2)
-{
+.buttons a:nth-child(2) {
     background-color: #37bae9;
     color: #fff;
 }
-@media screen and (max-width :980px){
-    .menu-toggler{
+@media screen and (max-width: 980px) {
+    .menu-toggler {
         display: block;
     }
-    .nav-menu{
+    .nav-menu {
         position: fixed;
         height: 100vh;
         width: 100%;
@@ -161,31 +150,29 @@ h1::after{
         padding: 80px 50px;
         transition: 0.3s linear;
     }
-    .nav-menu a{
+    .nav-menu a {
         display: flex;
         font-size: 30px;
         margin: 30px 0;
         justify-content: center;
-      
-    
     }
-    .sticky .nav-menu{
+    .sticky .nav-menu {
         background: #f1f1f1;
     }
-    .nav-menu.active{
+    .nav-menu.active {
         right: 0;
     }
 
-    .menu-toggler.active span:nth-child(1){
+    .menu-toggler.active span:nth-child(1) {
         transform: rotate(-45deg);
         top: 4px;
     }
 
-    .menu-toggler.active span:nth-child(2){
+    .menu-toggler.active span:nth-child(2) {
         opacity: 0;
     }
 
-    .menu-toggler.active span:nth-child(3){
+    .menu-toggler.active span:nth-child(3) {
         transform: rotate(45deg);
         bottom: 14px;
     }

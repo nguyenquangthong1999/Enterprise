@@ -11,7 +11,9 @@ use App\Http\Requests\StudentRequest;
 use App\Student;
 use Carbon\Carbon;
 use App\Account;
+use App\Semester;
 use App\Comment;
+use Illuminate\Support\Facades\Route;
 
 class StudentController extends Controller
 {
@@ -33,9 +35,15 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.function.upload_file');
+        $semester_id = \Route::current()->Parameter('id'); // 
+        $semester =  Semester::all()->where('semester_id', $semester_id);   
+        return view('student.function.upload_file')->with('semester',$semester);
     }
-
+    public function viewSemester()
+    {
+        $semester = Semester::all();
+       return view ('student.function.viewSemester')->with('semester',$semester );
+    }
     /**
      * Store a newly created resource in storage.
      *

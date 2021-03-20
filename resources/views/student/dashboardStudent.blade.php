@@ -34,12 +34,7 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('FILE_UPLOAD')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Upload File</p>
-                </a>
-              </li>
+              <!--  -->
               <li class="nav-item">
                 <a href="{{route('SHOW_UPLOAD')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -47,9 +42,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('CHECK_GRADE')}}" class="nav-link">
+                <a href="{{route('VIEW_SEMESTER')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Review From Coordinator</p>
+                  <p>View Semester</p>
                 </a>
               </li>
             </ul>
@@ -74,7 +69,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1 class="m-0 text-dark">Welcome Student!</h1>
+        <h1 class="m-0 text-dark">Dashboard</h1>
       </div><!-- /.col -->
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -85,5 +80,5 @@
     </div><!-- /.row -->
   </div><!-- /.container-fluid -->
 </div>
-  {{-- Welcome Student! --}}
+<h3 class = "ml-2"> Welcome Student! </h3>
 @endsection

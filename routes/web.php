@@ -12,9 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Homepage
+
 Route::get('/','AdminController@getIndex');
-Route::get('/account','AccountController@loginAccount');
 
 Route::get('admin','AdminController@getLogin')->name('ADMIN');
 Route::get('dashboardAdmin','AdminController@AdminDashboard')->name('DASHBOARD');
@@ -33,12 +32,12 @@ Route::get('account','AccountController@loginAccount')->name('ACCOUNT');
 Route::post('executeAccount','AccountController@executeLoginAccount');
 
 //Student Function
+Route::get('viewSemester','StudentController@viewSemester') ->name('VIEW_SEMESTER');
 Route::get('dashboardStudent','StudentController@StudentDashboard')->name('STUDENT');
-Route::get('fileUpload','StudentController@create')->name('FILE_UPLOAD');
+Route::get('fileUpload/{id}','StudentController@create')->name('FILE_UPLOAD');
 Route::post('executeUpload','StudentController@store');
 Route::get('showUpload','StudentController@index')->name('SHOW_UPLOAD');
 Route::resource('show_upload','StudentController')->only('edit', 'update');
-Route::get('gradeUpload','StudentController@checkGrade')->name('CHECK_GRADE');
 
 //Faculty Function
 Route::get('management_faculity', 'FaculityController@manage_faculity')->name('MANAGEMENT_FACULITY');
@@ -59,4 +58,15 @@ Route::delete('management_coordinator/{id}','CoordinatorController@delete');
 
 // Coordinator Front End Function
 Route::get('viewContribution','CoordinatorController@viewcontribution')->name('VIEW_CONTRIBUTION');
-Route::post('executeComment/{student_id}','CoordinatorController@executecomment');
+Route::get('addcomment/{id}', 'CoordinatorController@addcomment');
+// Route::post('add_comment', 'CoordinatorController@addCommentProcess');
+
+Route::patch('addcomment/{id}','CoordinatorController@addCommentProcess');
+
+
+// Semester 
+Route::get('semester', 'SemesterController@index')->name('MANAGEMENT_SEMESTER');
+Route::get('add_semester', 'SemesterController@add_semester')->name('ADD_SEMESTER');
+Route::post('semester', 'SemesterController@addSemesterProcess');
+Route::delete('semester/{id}','SemesterController@deleteSemester');
+
