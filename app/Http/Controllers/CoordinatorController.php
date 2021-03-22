@@ -114,7 +114,7 @@ class CoordinatorController extends Controller
     }
 
     public function viewcontribution(){
-        $getData = Student::all();
+        $getData = Student::all()->where('active' ,'=', '1');
         // $getStudentId = Student::find($student_id);
         // dd($getData);
         return view('coordinatorFE.function.view_contribution',compact('getData'));
@@ -133,4 +133,30 @@ class CoordinatorController extends Controller
         $setCmt123->grade =  $request->grade;
         $setCmt123->save();
     }
+
+    //Làm tiếp phần duyệt bài viết
+    public function review_post()
+    {
+        
+        $data = Student::all()->where('active','=', '0');
+        return view('coordinatorFE.function.Review_contribution',compact('data'));
+    }
+    public function delete_post($id)
+    {
+        //
+        DB::table('student')->where('student_id', $id)->delete();
+        return redirect('review')->with('status', 'Delete Post Successful!');
+
+    }
+
+    public function publish_post($id)
+    {
+        $check = DB::table('student')
+        ->where('student_id' , $id)
+        ->update(['active' => '1']);
+        return redirect('review')->with('message', 'Publish Post  Successful!');
+
+    }
+    
+
 }

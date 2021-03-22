@@ -8,11 +8,13 @@ class Student extends Model
 {
     public $timestamps = false; //set time to false
     protected $fillable = [
+       
     	'student_uploadimage',
         'student_uploadfile',
         'student_description',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'faculty_name'
     ];
     protected $primaryKey = 'student_id';
  	protected $table = 'student';

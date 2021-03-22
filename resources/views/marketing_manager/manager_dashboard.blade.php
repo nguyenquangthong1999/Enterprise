@@ -2,10 +2,10 @@
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url('dashboardStudent')}}" class="brand-link">
+    <a href="{{url('manager')}}" class="brand-link">
       <img src="{{asset('AdminTemplate/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">Student</span>
+      <span class="brand-text font-weight-light">Marketing Manager</span>
     </a>
   
     <!-- Sidebar -->
@@ -16,7 +16,7 @@
           <img src="{{asset('AdminTemplate/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Student</a>
+          <a href="#" class="d-block">Marketing Manager</a>
         </div>
       </div>
   
@@ -35,16 +35,11 @@
             </a>
             <ul class="nav nav-treeview">
               <!--  -->
+              
               <li class="nav-item">
-                <a href="{{route('SHOW_UPLOAD')}}" class="nav-link">
+                <a href="{{Route('STATISTICS')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>File Management</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('VIEW_SEMESTER')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View Semester</p>
+                  <p>View Statistics</p>
                 </a>
               </li>
             </ul>

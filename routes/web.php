@@ -56,11 +56,20 @@ Route::get('management_coordinator/edit_coordinator/{id}', 'CoordinatorControlle
 Route::patch('management_coordinator/{id}', 'CoordinatorController@editProcess');
 Route::delete('management_coordinator/{id}','CoordinatorController@delete');
 
+Route::get('review','CoordinatorController@review_post')->name('REVIEW_POST');
+Route::delete('review/{id}','CoordinatorController@delete_post');
+
+//publish bài viêt ở đây
+Route::get('publish/{id}', 'CoordinatorController@publish_post');
+
+
+
 // Coordinator Front End Function
 Route::get('viewContribution','CoordinatorController@viewcontribution')->name('VIEW_CONTRIBUTION');
 Route::get('addcomment/{id}', 'CoordinatorController@addcomment');
 // Route::post('add_comment', 'CoordinatorController@addCommentProcess');
 
+Route::patch('publish/{id}','CoordinatorController@publish_post');
 Route::patch('addcomment/{id}','CoordinatorController@addCommentProcess');
 
 
@@ -70,3 +79,7 @@ Route::get('add_semester', 'SemesterController@add_semester')->name('ADD_SEMESTE
 Route::post('semester', 'SemesterController@addSemesterProcess');
 Route::delete('semester/{id}','SemesterController@deleteSemester');
 
+//  Marketing manager
+
+Route::get('manager','ManagerController@ManagerDashboard') -> name('MANAGER');
+Route::geT('statistics','ManagerController@ViewStatistics')->name('STATISTICS');

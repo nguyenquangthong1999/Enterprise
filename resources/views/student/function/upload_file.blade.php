@@ -58,7 +58,19 @@
                 @if ($errors->has('student_description'))
                   <p class="help is-danger" style="color: red">Please write description for your upload!</p>
                 @endif
+
+                <div class="form-group">
+                  <label for="">Faculty</label>
+                  <select class="form-control" name="faculty_name">
+                    <option>Select Falcuty</option>
+                    @foreach($faculity as $item)
+                    <option value="{{$item -> faculity_name}}">{{$item -> faculity_name}}</option>
+                    @endforeach
+                  </select>
+                </div>
+             
                 {{-- <center> --}}
+
                 <div class="form-check">
                   <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">I agree to Terms and Conditions</label>

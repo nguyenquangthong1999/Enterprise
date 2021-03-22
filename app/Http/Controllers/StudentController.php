@@ -24,8 +24,9 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
         $data = Student::all();
-        return view('student.function.show',compact('data'));
+        return view('student.function.show',compact('data','getDataStudent'));
     }
 
     /**
@@ -36,13 +37,20 @@ class StudentController extends Controller
     public function create()
     {
         $semester_id = \Route::current()->Parameter('id'); // 
-        $semester =  Semester::all()->where('semester_id', $semester_id);   
-        return view('student.function.upload_file')->with('semester',$semester);
+       
+        $semester =  Semester::all()->where('semester_id', $semester_id); 
+        $faculity = DB::table('faculity')->get();
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
+        return view('student.function.upload_file' , compact('faculity','getDataStudent'))->with('semester' , $semester);
+        
+       
+
     }
     public function viewSemester()
     {
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
         $semester = Semester::all();
-       return view ('student.function.viewSemester')->with('semester',$semester );
+        return view ('student.function.viewSemester',compact('getDataStudent'))->with('semester',$semester );
     }
     /**
      * Store a newly created resource in storage.
@@ -52,8 +60,9 @@ class StudentController extends Controller
      */
     public function store(StudentRequest $request)
     {
+       
         $add = new Student;
-        $add1 = new Comment;
+        // $add1 = new Comment;
         if($request->file('student_uploadimage')){
             $destination_path1 = 'imageStudent';
             $student_uploadimage = $request->file('student_uploadimage');
@@ -70,10 +79,12 @@ class StudentController extends Controller
         }
         // $created_at = $now;
         $add->student_description = $request->student_description;
+        $add->faculty_name = $request->faculty_name;
+        
         $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y');
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $add->created_at = now();
-        $add1->student_uploadfile = $filename;
+        //$add1->student_uploadfile = $filename;
         // dd($add1);
         $getId = Account::all();
 
@@ -96,8 +107,8 @@ class StudentController extends Controller
             $message->from($data['email'],$title_mail);
         });
         $add->save();
-        $add1->save();
-        // dd($add);
+        //$add1->save();
+        
         return Redirect()->Route('SHOW_UPLOAD')->with('message','Upload File Successfully!');
     }
 
@@ -172,7 +183,11 @@ class StudentController extends Controller
     }
 
     public function StudentDashboard(){
-        return view('student.dashboardStudent');
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
+        // $getStudentId = Student::find($student_id);
+        // dd($getData);
+        return view('student.dashboardStudent',compact('getDataStudent'));
+       
     }
 
     public function checkGrade(){

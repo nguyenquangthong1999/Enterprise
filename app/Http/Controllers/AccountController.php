@@ -133,8 +133,8 @@ class AccountController extends Controller
                 echo "Coordinator";
             }elseif($check->account_number == 1){
                 echo "Guest";
-            }else{
-                echo "Marketing Manager";
+            }elseif ($check->account_number == 4){
+                return Redirect()->Route('MANAGER');
             }
         }else{
             return Redirect()->back()->with('message','Sai thông tin!');
