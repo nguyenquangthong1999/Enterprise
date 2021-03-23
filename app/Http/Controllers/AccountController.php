@@ -137,7 +137,7 @@ class AccountController extends Controller
                 return Redirect()->Route('MANAGER');
             }
         }else{
-            return Redirect()->back()->with('message','Sai thông tin!');
+            return Redirect()->back()->with('message','Incorrect username or password!');
         }
         // dd($check);
     }

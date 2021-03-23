@@ -61,7 +61,7 @@
 
                 <div class="form-group">
                   <label for="">Faculty</label>
-                  <select class="form-control" name="faculty_name">
+                  <select class="form-control" name="faculity_name">
                     <option>Select Falcuty</option>
                     @foreach($faculity as $item)
                     <option value="{{$item -> faculity_name}}">{{$item -> faculity_name}}</option>

@@ -1,4 +1,4 @@
-@extends('parentlayout')
+{{-- @extends('parentlayout')
 
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
@@ -95,7 +95,7 @@
                     <h2 class="lead"><b>{{$getDatas->student_uploadfile}}</b></h2>
                     <p class="text-muted text-sm"><b>Description: </b>{{$getDatas->student_description}}</p>
                     <p class="text-muted text-sm"><b>Date Upload: </b>{{$getDatas->created_at}}</p>
-                    <p class="text-muted text-sm"><b>Faculty: </b>{{$getDatas->faculty_name}}</p>
+                    <p class="text-muted text-sm"><b>Faculty: </b>{{$getDatas->faculity_name}}</p>
                   </div>
                   <div class="col-5 text-center">
                     <img src="{{asset("imageStudent/$getDatas->student_uploadimage")}}" alt="" class="img-circle img-fluid">
@@ -122,4 +122,4 @@
     <!-- /.card -->
   
   </section>
-  @endsection
+  @endsection --}}

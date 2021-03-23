@@ -26,7 +26,7 @@
                 <span></span>
             </button>
             <div class="nav-menu">
-                <a href="/account">Login</a>
+                <a href="{{route('ACCOUNT')}}">Login</a>
             </div>
         </div>
     </nav>

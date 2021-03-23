@@ -38,6 +38,7 @@ Route::get('fileUpload/{id}','StudentController@create')->name('FILE_UPLOAD');
 Route::post('executeUpload','StudentController@store');
 Route::get('showUpload','StudentController@index')->name('SHOW_UPLOAD');
 Route::resource('show_upload','StudentController')->only('edit', 'update');
+Route::get('grade','StudentController@checkGrade')->name('GRADE');
 
 //Faculty Function
 Route::get('management_faculity', 'FaculityController@manage_faculity')->name('MANAGEMENT_FACULITY');
@@ -62,15 +63,12 @@ Route::delete('review/{id}','CoordinatorController@delete_post');
 //publish bài viêt ở đây
 Route::get('publish/{id}', 'CoordinatorController@publish_post');
 
-
-
 // Coordinator Front End Function
 Route::get('viewContribution','CoordinatorController@viewcontribution')->name('VIEW_CONTRIBUTION');
-Route::get('addcomment/{id}', 'CoordinatorController@addcomment');
-// Route::post('add_comment', 'CoordinatorController@addCommentProcess');
+Route::post('executeComment/{student_id}','CoordinatorController@executecomment');
 
 Route::patch('publish/{id}','CoordinatorController@publish_post');
-Route::patch('addcomment/{id}','CoordinatorController@addCommentProcess');
+// Route::patch('addcomment/{id}','CoordinatorController@addCommentProcess');
 
 
 // Semester 
@@ -80,6 +78,5 @@ Route::post('semester', 'SemesterController@addSemesterProcess');
 Route::delete('semester/{id}','SemesterController@deleteSemester');
 
 //  Marketing manager
-
 Route::get('manager','ManagerController@ManagerDashboard') -> name('MANAGER');
-Route::geT('statistics','ManagerController@ViewStatistics')->name('STATISTICS');
+Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');

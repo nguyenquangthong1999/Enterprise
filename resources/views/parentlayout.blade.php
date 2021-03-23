@@ -136,7 +136,7 @@
       // console.log(comment);
       var _token = $('input[name="_token"]').val();
       var grade = $(this).closest(".templateComment").find("#grade option:selected").val()
-      console.log(grade);
+      // console.log(grade);
         if(comment != '' && grade != '0'){
           $.ajax({
           url: url,

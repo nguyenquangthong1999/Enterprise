@@ -41,7 +41,7 @@ class StudentController extends Controller
         $semester =  Semester::all()->where('semester_id', $semester_id); 
         $faculity = DB::table('faculity')->get();
         $getDataStudent = Student::all()->where('active' ,'=', '1');
-        return view('student.function.upload_file' , compact('faculity','getDataStudent'))->with('semester' , $semester);
+        return view('student.function.upload_file', compact('faculity','getDataStudent') )->with('semester' , $semester);
         
        
 
@@ -79,7 +79,7 @@ class StudentController extends Controller
         }
         // $created_at = $now;
         $add->student_description = $request->student_description;
-        $add->faculty_name = $request->faculty_name;
+        $add->faculity_name = $request->faculity_name;
         
         $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y');
         date_default_timezone_set('Asia/Ho_Chi_Minh');
@@ -183,7 +183,8 @@ class StudentController extends Controller
     }
 
     public function StudentDashboard(){
-        $getDataStudent = Student::all()->where('active' ,'=', '1');
+        // $getDataStudent = Student::all()->where('active' ,'=', '1');
+        $getDataStudent = Student::all();
         // $getStudentId = Student::find($student_id);
         // dd($getData);
         return view('student.dashboardStudent',compact('getDataStudent'));
@@ -191,8 +192,8 @@ class StudentController extends Controller
     }
 
     public function checkGrade(){
-        $data = Student::all();
+        $getDataStudent = Student::all();
         $data1 = Comment::all();
-        return view('student.function.grade',compact('data','data1'));
+        return view('student.function.grade',compact('data1','getDataStudent'));
     }
 }

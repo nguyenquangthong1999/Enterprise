@@ -47,6 +47,12 @@
                   <p>View Semester</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('GRADE')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Grade</p>
+                </a>
+              </li>
             </ul>
           </li>
           <li class="nav-item">
@@ -100,21 +106,21 @@
                     <h2 class="lead"><b>{{$getDatas->student_uploadfile}}</b></h2>
                     <p class="text-muted text-sm"><b>Description: </b>{{$getDatas->student_description}}</p>
                     <p class="text-muted text-sm"><b>Date Upload: </b>{{$getDatas->created_at}}</p>
-                    <p class="text-muted text-sm"><b>Faculty: </b>{{$getDatas->faculty_name}}</p>
+                    <p class="text-muted text-sm"><b>Faculty: </b>{{$getDatas->faculity_name}}</p>
                   </div>
                   <div class="col-5 text-center">
                     <img src="{{asset("imageStudent/$getDatas->student_uploadimage")}}" alt="" class="img-circle img-fluid">
                   </div>
                 </div>
               </div>
-              <div class="card-footer">
+              {{-- <div class="card-footer">
                 <div class="text-right">
                  
                   <a href="uploadfile/{{$getDatas->student_uploadfile}}" class="btn btn-info">
                     <i class="fas fa-eye"></i> Dowload To View
                   </a>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </div>
           @endforeach
