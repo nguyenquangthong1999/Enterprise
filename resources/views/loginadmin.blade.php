@@ -103,7 +103,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
-<body class="hold-transition login-page" style="background : no-repeat url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=750&q=80'); background-size: cover;">
+<body class="hold-transition login-page" style="background : no-repeat url('https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'); background-size: cover;">
 <div class="login-box">
   <div class="login-logo">
     <h1 style="text-shadow: 3px 3px #f1f1f1;">Admin</h1>
@@ -139,16 +139,16 @@
 			</div>
 			</div>
 			<div class="row">
-			<div class="col-8">
+			{{-- <div class="col-8">
 				<div class="icheck-primary">
 				<input type="checkbox" id="remember">
 				<label for="remember">
 					Remember Me
 				</label>
 				</div>
-			</div>
+			</div> --}}
 			<!-- /.col -->
-			<div class="col-4">
+			<div class="col-4 d-inline-flex justify-content-end">
 				<button type="submit" class="btn btn-primary btn-block">Sign In</button>
 			</div>
 			<!-- /.col -->

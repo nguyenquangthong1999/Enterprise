@@ -48,7 +48,7 @@ class CoordinatorController extends Controller
             'cordinator_name' => $request->namecoordinator,
             'cordinator_email' => $request->email,
             'cordinator_phone' => $request->phone,
-            'faculity_name' => $request->faculty_name,
+            'faculity_name' => $request->faculity_name,
         ]);
         return redirect('management_coordinator')->with('status', 'Add Coordinator Successful!');
     }
@@ -79,7 +79,7 @@ class CoordinatorController extends Controller
             'cordinator_name' => $request->namecoordinator,
             'cordinator_email' => $request->email,
             'cordinator_phone' => $request->phone,
-            'faculity_name' => $request->faculty_name,
+            'faculity_name' => $request->faculity_name,
         ]);
          return redirect('management_coordinator')->with('status', 'Update Coordinator Successful!');
     }
@@ -109,15 +109,23 @@ class CoordinatorController extends Controller
     // }
 
     // Coordinator Front End Function
-    public function CoordinatorDashboard(){
-        return view('coordinatorFE.dashboardCoordinator');
+    public function CoordinatorDashboard(Request $request){
+        // $getImageCoordinator = DB::table('account')->get();
+        // dd($getImageCoordinator);
+        $getImageCoordinator = Account::all();
+        // $getEmail = $request->input('account_email');
+        // dd($getEmail);
+        // $image = $getImageCoordinator->account_id;
+        // dd($image);
+        return view('coordinatorFE.dashboardCoordinator',compact('getImageCoordinator'));
     }
 
     public function viewcontribution(){
+        $getImageCoordinator = Account::all();
         $getData = Student::all()->where('active' ,'=', '1');
         // $getStudentId = Student::find($student_id);
         // dd($getData);
-        return view('coordinatorFE.function.view_contribution',compact('getData'));
+        return view('coordinatorFE.function.view_contribution',compact('getData','getImageCoordinator'));
     }
 
     public function executecomment(Request $request){
@@ -137,9 +145,9 @@ class CoordinatorController extends Controller
     //Làm tiếp phần duyệt bài viết
     public function review_post()
     {
-        
+        $getImageCoordinator = Account::all();
         $data = Student::all()->where('active','=', '0');
-        return view('coordinatorFE.function.Review_contribution',compact('data'));
+        return view('coordinatorFE.function.Review_contribution',compact('data','getImageCoordinator'));
     }
     public function delete_post($id)
     {

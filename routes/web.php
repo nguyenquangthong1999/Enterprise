@@ -66,6 +66,7 @@ Route::get('publish/{id}', 'CoordinatorController@publish_post');
 // Coordinator Front End Function
 Route::get('viewContribution','CoordinatorController@viewcontribution')->name('VIEW_CONTRIBUTION');
 Route::post('executeComment/{student_id}','CoordinatorController@executecomment');
+// Route::post('add_comment', 'CoordinatorController@addCommentProcess');
 
 Route::patch('publish/{id}','CoordinatorController@publish_post');
 // Route::patch('addcomment/{id}','CoordinatorController@addCommentProcess');

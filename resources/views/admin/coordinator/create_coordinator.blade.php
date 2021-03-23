@@ -51,7 +51,7 @@
                 </div>
                 <div class="form-group">
                   <label for="">Faculty</label>
-                  <select class="form-control" id ="faculty" name="faculty_name">
+                  <select class="form-control" id ="faculty" name="faculity_name">
                     <option>Select Falcuty</option>
                     @foreach($faculity as $item)
                     <option value="{{$item -> faculity_name}}">{{$item -> faculity_name}}</option>

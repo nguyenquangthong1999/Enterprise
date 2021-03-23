@@ -35,7 +35,7 @@ class AdminController extends Controller
             Session::put('admin_name',$request->admin_name);
             return Redirect()->route('DASHBOARD')->with('message','Welcome Admin!');
         }else{
-            return Redirect()->Route('ADMIN')->with('message','Sai thông tin!');
+            return Redirect()->Route('ADMIN')->with('message','Incorrect username or password!');
         }
     }
 

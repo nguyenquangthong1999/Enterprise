@@ -24,9 +24,10 @@ class StudentController extends Controller
      */
     public function index()
     {
+        $getImageStudent = Account::all();
         $getDataStudent = Student::all()->where('active' ,'=', '1');
         $data = Student::all();
-        return view('student.function.show',compact('data','getDataStudent'));
+        return view('student.function.show',compact('data','getDataStudent','getImageStudent'));
     }
 
     /**
@@ -37,20 +38,22 @@ class StudentController extends Controller
     public function create()
     {
         $semester_id = \Route::current()->Parameter('id'); // 
-       
+        $getImageStudent = Account::all();
         $semester =  Semester::all()->where('semester_id', $semester_id); 
         $faculity = DB::table('faculity')->get();
         $getDataStudent = Student::all()->where('active' ,'=', '1');
-        return view('student.function.upload_file', compact('faculity','getDataStudent') )->with('semester' , $semester);
+        return view('student.function.upload_file', compact('faculity','getDataStudent','getImageStudent') )->with('semester' , $semester);
         
        
 
     }
     public function viewSemester()
     {
+
+        $getImageStudent = Account::all();
         $getDataStudent = Student::all()->where('active' ,'=', '1');
         $semester = Semester::all();
-        return view ('student.function.viewSemester',compact('getDataStudent'))->with('semester',$semester );
+        return view ('student.function.viewSemester',compact('getDataStudent','getImageStudent','semester'));
     }
     /**
      * Store a newly created resource in storage.
@@ -185,15 +188,18 @@ class StudentController extends Controller
     public function StudentDashboard(){
         // $getDataStudent = Student::all()->where('active' ,'=', '1');
         $getDataStudent = Student::all();
+        $getImageStudent = Account::all();
+        // $getDataStudent1 = Student::all();
         // $getStudentId = Student::find($student_id);
         // dd($getData);
-        return view('student.dashboardStudent',compact('getDataStudent'));
+        return view('student.dashboardStudent',compact('getDataStudent','getImageStudent'));
        
     }
 
     public function checkGrade(){
+        $getImageStudent = Account::all();
         $getDataStudent = Student::all();
         $data1 = Comment::all();
-        return view('student.function.grade',compact('data1','getDataStudent'));
+        return view('student.function.grade',compact('data1','getDataStudent','getImageStudent'));
     }
 }

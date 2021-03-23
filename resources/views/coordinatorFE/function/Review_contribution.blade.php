@@ -56,10 +56,7 @@
                     <th>Image</th>
                     <th>Description</th>
                     <th>Date Upload</th>
-                    <th>Date Update</th>
                     <th>Action</th>
-                    
-                    
                   </tr>
                   </thead>
                   <tbody>
@@ -72,30 +69,17 @@
                     </td>
                     <td>{{$datas->student_description}}</td>
                     <td>{{$datas->created_at}}</td>
-                    @if($datas->updated_at != null)
-                      <td>{{$datas->updated_at}}</td>
-                    @else
-                      <td></td>
-                    @endif
                     <td>
                     <form action="{{url('review/'.$datas->student_id)}}" method="post" onsubmit="return confirm('Are you sure delete post?')">
                         @method('delete')
                         @csrf
-                        <a style="color: white" href="{{url('publish/'.$datas->student_id)}}" class="btn btn-primary">
+                        <a style="color: white" href="{{url('pulish/b'.$datas->student_id)}}" class="btn btn-primary">
                             Select for publish <i class="fas fa-eye"></i>
                         </a>
                         <button class="btn btn-danger">
                             Remove <i class="fa fa-trash-alt"></i>  
-                        </button>
-                          <a style="color: white" href="uploadfile/{{$datas->student_uploadfile}}" download="{{$datas->student_uploadfile}}" class="btn btn-info">
-                            <i class="fa fa-download"></i>
-                            Download
-                          </a>        
+                        </button>      
                     </form>
-                       
-                        
-                    
-            
                     </td>
                   
                
