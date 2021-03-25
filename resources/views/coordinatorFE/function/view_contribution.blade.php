@@ -37,7 +37,7 @@
                   <h2 class="lead"><b id="file1">{{$getDatas->student_uploadfile}}</b></h2>
                   <p class="text-muted text-sm"><b>Description: </b>{{$getDatas->student_description}}</p>
                   <p class="text-muted text-sm"><b>Date Upload: </b>{{$getDatas->created_at}}</p>
-                  <p class="text-muted text-sm"><b>Faculty: </b>{{$getDatas->faculity_name}}</p>
+                  <p class="text-muted text-sm"><b>Faculity: </b>{{$getDatas->faculity_name}}</p>
                 </div>
                 <div class="col-5 text-center">
                   <img src="{{asset("imageStudent/$getDatas->student_uploadimage")}}" class="img-circle img-fluid" alt="">
@@ -57,7 +57,7 @@
     
       </div>
     </div>
-
+    
     <div class="callout callout-info templateComment">
       <form action="" method="POST">
         @csrf

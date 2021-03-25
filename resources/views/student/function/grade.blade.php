@@ -78,7 +78,7 @@
                       @endif
                   </td>
                   <td>
-                      @if($datas->grade == 0)
+                      @if(($datas->grade == NULL) ||($datas->grade == 0))
                         Waiting For Approval
                       @else
                         Commented 

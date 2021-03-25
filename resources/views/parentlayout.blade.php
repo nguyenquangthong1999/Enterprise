@@ -126,7 +126,7 @@
     });
 
     $(".btnComment").click(function(){
-      var student_uploadfile = $(this).closest(".templateComment").find(".input1").text();
+      // var student_uploadfile = $(this).closest(".templateComment").find(".input1").text();
       // console.log(student_uploadfile);
       var student_id = $(this).closest(".templateComment").find(".input2").val();
       // console.log(student_id);
@@ -142,7 +142,6 @@
           url: url,
           method: 'POST',
           data:{
-              student_uploadfile,
               student_id,
               _token,
               comment,

@@ -14,7 +14,9 @@ class Student extends Model
         'student_description',
         'created_at',
         'updated_at',
-        'faculity_name'
+        'faculity_name',
+        'grade',
+        'comment',
     ];
     protected $primaryKey = 'student_id';
  	protected $table = 'student';

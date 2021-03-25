@@ -111,14 +111,6 @@
                   </div>
                 </div>
               </div>
-              {{-- <div class="card-footer">
-                <div class="text-right">
-                 
-                  <a href="uploadfile/{{$getDatas->student_uploadfile}}" class="btn btn-info">
-                    <i class="fas fa-eye"></i> Dowload To View
-                  </a>
-                </div>
-              </div> --}}
             </div>
           </div>
           @endforeach

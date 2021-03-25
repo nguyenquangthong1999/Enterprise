@@ -191,15 +191,16 @@ class StudentController extends Controller
         $getImageStudent = Account::all();
         // $getDataStudent1 = Student::all();
         // $getStudentId = Student::find($student_id);
-        // dd($getData);
-        return view('student.dashboardStudent',compact('getDataStudent','getImageStudent'));
+        dd($getDataStudent);
+        // return view('student.dashboardStudent',compact('getDataStudent','getImageStudent'));
        
     }
 
     public function checkGrade(){
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
         $getImageStudent = Account::all();
-        $getDataStudent = Student::all();
-        $data1 = Comment::all();
-        return view('student.function.grade',compact('data1','getDataStudent','getImageStudent'));
+        $data1 = Student::all();
+        // $data1 = Comment::all();
+        return view('student.function.grade',compact('data1','getImageStudent','getDataStudent'));
     }
 }
