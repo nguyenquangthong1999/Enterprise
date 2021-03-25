@@ -65,7 +65,7 @@ class StudentController extends Controller
     {
        
         $add = new Student;
-        // $add1 = new Comment;
+        $add1 = new Comment;
         if($request->file('student_uploadimage')){
             $destination_path1 = 'imageStudent';
             $student_uploadimage = $request->file('student_uploadimage');
@@ -87,7 +87,7 @@ class StudentController extends Controller
         $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y');
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $add->created_at = now();
-        //$add1->student_uploadfile = $filename;
+        $add1->student_uploadfile = $filename;
         // dd($add1);
         $getId = Account::all();
 
@@ -110,7 +110,7 @@ class StudentController extends Controller
             $message->from($data['email'],$title_mail);
         });
         $add->save();
-        //$add1->save();
+        $add1->save();
         
         return Redirect()->Route('SHOW_UPLOAD')->with('message','Upload File Successfully!');
     }
