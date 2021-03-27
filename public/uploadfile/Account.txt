@@ -1,6 +1,0 @@
-Student: student@gmail.com student
-Coordinator: coordinator@gmail.com coordinator
-Guest: guest@gmail.com guest
-Manager: manager@gmail.com manager
-
-Admin: admin@gmail.com admin

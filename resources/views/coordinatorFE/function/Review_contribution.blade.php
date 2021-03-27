@@ -71,7 +71,7 @@
                     <td>{{$datas->created_at}}</td>
                     <td>
                     <form action="{{url('review/'.$datas->student_id)}}" method="post" onsubmit="return confirm('Are you sure delete post?')">
-                        @method('patch')
+                        @method('delete')
                         @csrf
                         <a style="color: white" href="{{url('publish/'.$datas->student_id)}}" class="btn btn-primary">
                             Select for publish <i class="fas fa-eye"></i>

@@ -128,33 +128,20 @@ class CoordinatorController extends Controller
         return view('coordinatorFE.function.view_contribution',compact('getData','getImageCoordinator'));
     }
 
-    public function executecomment(Request $request, $student_id){
+    public function executecomment(Request $request){
         // $getData = Student::all();
         // $getStudentId = Student::where('student_id',$getData['student_id'])->get();
         // dd($getStudentId);
         // $data = $request->all();
-        // $getIdCmt = Comment::find($id);
-        // $inputAll = $request->all();
-        // $inputAll['comment'] = $request->input('comment');
-        // $inputAll['grade'] = $request->input('grade');
-        // $inputAll['student_id'] = $request->input('student_id');
-        // $getIdCmt->update($inputAll);
-        $check = DB::table('student')
-        ->where('student_id' , $student_id)
-        ->update([
-            'comment' => $request->comment,
-            'grade' => $request->grade,
-        ]);;
-        
-        // $cmt = new Comment;
-        // $cmt->comment = $request->comment;
-        // $cmt->student_uploadfile = $request->student_uploadfile;
-        // $cmt->student_id = $request->student_id;
-        // $cmt->grade = $request->grade;
-        // $cmt->save();
+        $setCmt123 = new Comment;
+        $setCmt123->comment = $request->comment;
+        $setCmt123->student_uploadfile = $request->student_uploadfile;
+        $setCmt123->student_id = $request->student_id;
+        $setCmt123->comment = $request->comment;
+        $setCmt123->grade =  $request->grade;
+        $setCmt123->save();
     }
 
-    
     //Làm tiếp phần duyệt bài viết
     public function review_post()
     {

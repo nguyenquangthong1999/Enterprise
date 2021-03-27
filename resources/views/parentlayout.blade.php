@@ -15,6 +15,13 @@
   <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/daterangepicker/daterangepicker.css')}}">
   <link rel="stylesheet" href="{{asset('AdminTemplate/plugins/summernote/summernote-bs4.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  
+
+
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -56,10 +63,11 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <!-- /.content-header -->
-
+    
     @yield('admin_content')
     @yield('student_content')
     @yield('coordinator_content')
+    @yield('manager_content')
     <!-- Main content -->
     <!-- /.content -->
   </div>
@@ -100,6 +108,14 @@
 <script src="{{asset('AdminTemplate/dist/js/pages/dashboard.js')}}"></script>
 <script src="{{asset('AdminTemplate/dist/js/demo.js')}}"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 <script>
   $(document).ready(function(){
     var aa = $('.templateComment').hide();
@@ -126,7 +142,7 @@
     });
 
     $(".btnComment").click(function(){
-      // var student_uploadfile = $(this).closest(".templateComment").find(".input1").text();
+      var student_uploadfile = $(this).closest(".templateComment").find(".input1").text();
       // console.log(student_uploadfile);
       var student_id = $(this).closest(".templateComment").find(".input2").val();
       // console.log(student_id);
@@ -142,6 +158,7 @@
           url: url,
           method: 'POST',
           data:{
+              student_uploadfile,
               student_id,
               _token,
               comment,
@@ -169,5 +186,7 @@
 
   })
 </script>
+  
+
 </body>
 </html>

@@ -81,3 +81,4 @@ Route::delete('semester/{id}','SemesterController@deleteSemester');
 //  Marketing manager
 Route::get('manager','ManagerController@ManagerDashboard') -> name('MANAGER');
 Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');
+Route::post('/filter-by-date','ManagerController@filter_by_date');

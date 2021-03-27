@@ -10,8 +10,10 @@ class SemesterController extends Controller
     public function index()
     {
         $semester = DB::table('semester')->get();
+       
+        return view('admin.semester.dashboardSemester', compact( 'semester'));
         
-        return view ('admin.semester.dashboardSemester')->with('semester',$semester);
+        
     
     }
 
