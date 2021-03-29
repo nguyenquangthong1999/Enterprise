@@ -57,10 +57,10 @@
                     <td>{{$item->end_date}}</td>
                     <td><a style="color: white" href="" class="btn btn-warning">Edit <i class="fas fa-pencil-alt"></a></td>
                     <td>
-                      <form action="{{url('semester/'.$item->semester_id)}}" method = "POST" onsubmit="return confirm('Are you sure delete?')">
+                      <form action="{{url('semester/'.$item->semester_id)}}" method = "POST" onsubmit="return confirm('Are you sure delete semester?')">
                           @method('delete')
                           @csrf
-                          <button style="color: white" class="btn btn-danger">Delete <i class="fas fa-trash-alt"></button></td>
+                          <button style="color: white" class="btn btn-danger">Delete<i class="fas fa-trash-alt"></button></td>
                           <!-- <a style="color: white" class="btn btn-danger">Delete <i class="fas fa-trash-alt"></a></td> -->
                       </form>
                   </tr>
