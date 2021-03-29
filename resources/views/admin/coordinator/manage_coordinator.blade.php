@@ -8,14 +8,13 @@
         </div>
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">DataTables</li>
+            <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
+            <li class="breadcrumb-item active">Coordinator</li>
           </ol>
         </div>
       </div>
     </div><!-- /.container-fluid -->
   </section>
-
   @if(session()->has('message'))
         <div class="alert alert-success">
           {!! session()->get('message') !!}
@@ -25,14 +24,11 @@
           {!! session()->get('error') !!}
         </div>
   @endif
-  
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
        <a style="color: white" href="{{route('ADD_COORDINATOR')}}" class="btn btn-warning"> Assign Faculty to Coordinator  <i class="fas fa-plus"></i></a>
-
       <div class="row">
- 
         <div class="col-12">
           <br>
           @if (session('status'))
@@ -40,8 +36,6 @@
             {{ session('status') }}
           </div>
           @endif
-           
-           
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -72,9 +66,7 @@
                           <button style="color: white" class="btn btn-danger">Delete <i class="fas fa-trash-alt"></button></td>
                           <!-- <a style="color: white" class="btn btn-danger">Delete <i class="fas fa-trash-alt"></a></td> -->
                       </form>
-
                   </tr>
-                    
                     @endforeach
                 </tbody>
               </table>
@@ -82,7 +74,6 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
-
           <!-- /.card -->
         </div>
         <!-- /.col -->
