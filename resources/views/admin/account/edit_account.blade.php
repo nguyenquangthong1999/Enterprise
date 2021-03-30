@@ -8,14 +8,13 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
             <li class="breadcrumb-item active">Account</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
-
   <center>
     <div class="col-sm-5">
       @if(session()->has('message'))
@@ -80,14 +79,12 @@
                 @endif
               </div>
               <!-- /.card-body -->
-
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>
             </form>
           </div>
           <!-- /.card -->
-
         </div>
       </div>
       <!-- /.row -->

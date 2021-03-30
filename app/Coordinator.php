@@ -1,9 +1,6 @@
 <?php
-
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
-
 class Coordinator extends Model
 {
     public $timestamps = false; //set time to false

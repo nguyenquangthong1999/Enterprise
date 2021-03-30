@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use DB;
 use Session;
 use App\Account;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 class FaculityController extends Controller
 {
      /**
@@ -71,7 +71,6 @@ class FaculityController extends Controller
      */
     public function delete($id)
     {
-        //
         DB::table('faculity')->where('faculity_id', $id)->delete();
         return redirect()->route('MANAGEMENT_FACULITY')->with('status', 'Delete Faculty Successful!');
     }

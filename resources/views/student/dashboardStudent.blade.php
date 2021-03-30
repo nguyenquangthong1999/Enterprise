@@ -1,5 +1,4 @@
 @extends('parentlayout')
-
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
    <a href="index3.html" class="brand-link">
     <img src="{{asset('AdminTemplate/dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
@@ -17,7 +16,6 @@
         <a href="#" class="d-block">Student</a>
       </div>
     </div>
-  
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -67,7 +65,6 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
   @section('student_content')
   <div class="content-header">
     <div class="container-fluid">
@@ -85,7 +82,6 @@
     </div><!-- /.container-fluid -->
   </div>
   <section class="content">
-  
     <!-- Default box -->
     <div class="card card-solid">
       <div class="card-body pb-0">
@@ -122,13 +118,10 @@
             </div>
           </div>
           @endforeach
-          
-          
         </div>
       </div>
       <!-- /.card-body -->  
     </div>
     <!-- /.card -->
-  
   </section>
   @endsection

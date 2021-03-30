@@ -8,7 +8,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
             <li class="breadcrumb-item active">Coordinator</li>
           </ol>
         </div><!-- /.col -->
@@ -60,7 +60,6 @@
                 </div>
               </div>
               <!-- /.card-body -->
-
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary">Add</button>
               </div>

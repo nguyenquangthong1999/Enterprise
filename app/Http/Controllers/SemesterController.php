@@ -1,10 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use DB;
-
+use Illuminate\Http\Request;
 class SemesterController extends Controller
 {
     public function index()
@@ -12,12 +9,10 @@ class SemesterController extends Controller
         $semester = DB::table('semester')->get();
         return view('admin.semester.dashboardSemester', compact( 'semester'));
     }
-
     public function add_semester()
     {
         return view('admin.semester.create_semester');
     }
-
     public function addSemesterProcess(Request $request)
     {
         DB::table('semester')->insert([
@@ -27,11 +22,9 @@ class SemesterController extends Controller
         ]);
         return redirect('semester')->with('status', 'Create Semester Successful!');
     }
-
     public function deleteSemester($id)
     {
         DB::table('semester')->where('semester_id' , $id)->delete();
         return redirect('semester')->with('status', 'Delete Semester Successful!');
-
     }
 }

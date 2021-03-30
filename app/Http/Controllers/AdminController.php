@@ -1,24 +1,19 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use DB;
 use Session;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
 use App\Account;
-
 class AdminController extends Controller
 {
     // public function getPageForAdmin(){
     //     return view('loginadmin');
     // }
-
     public function getLogin(){
         return view('loginadmin');
     }
-
     public function AdminDashboard(){
         return view('admin.dashboardAdmin');
     }
@@ -38,6 +33,4 @@ class AdminController extends Controller
             return Redirect()->Route('ADMIN')->with('message','Incorrect username or password!');
         }
     }
-
-    
 }

@@ -8,14 +8,13 @@
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
           <li class="breadcrumb-item active">View Contribution</li>
         </ol>
       </div>
     </div>
   </div><!-- /.container-fluid -->
 </section>
-
 <center>
     <div class="col-sm-5">
       @if(session()->has('message'))
@@ -29,7 +28,6 @@
       @endif
    </div>
 </center>
-    
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -81,12 +79,6 @@
                         </button>      
                     </form>
                     </td>
-                  
-               
-                  
-  
-                 
-                    
                   </tr>
                   @endforeach
                   </tbody>
@@ -95,7 +87,6 @@
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
-  
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -104,8 +95,4 @@
       </div>
       <!-- /.container-fluid -->
     </section>
-
- 
-
-  
 @endsection
