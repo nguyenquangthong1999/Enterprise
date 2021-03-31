@@ -23,9 +23,14 @@
   <body class="hold-transition sidebar-mini layout-fixed">
   <div class="wrapper">
     <!-- Navbar -->
+    
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+      @yield('admin_dashboard')
+      @yield('student_dashboard')
+      @yield('coordinator_dashboard')
+      @yield('manager_dashboard')
       <!-- Left navbar links -->
-      <ul class="navbar-nav">
+      {{-- <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
@@ -46,7 +51,7 @@
             </button>
           </div>
         </div>
-      </div>
+      </div> --}}
     </nav>
     <!-- /.navbar -->
     <!-- Main Sidebar Container -->
@@ -62,14 +67,6 @@
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    {{-- <footer class="main-footer">
-      <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">EWSD_Group_03</a>.</strong>
-      All rights reserved.
-      <div class="float-right d-none d-sm-inline-block">
-        <b>Version</b> 3.0.5
-      </div>
-    </footer> --}}
-    <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->
     </aside>
