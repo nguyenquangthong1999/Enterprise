@@ -83,7 +83,7 @@
                     <a href="{{ROUTE('manage_account.edit',$datas->account_id)}}" ui-toggle-class="">
                         <i class="fa fa-check text-success text-active"></i>{{-- edit --}}
                     </a>
-                    <a href="{{URL('delete_account/'.$datas->account_id)}}" onclick="return confirm('Are you sure?')" ui-toggle-class="" >
+                    <a href="{{URL('delete_account/'.$datas->account_id)}}" onclick="return confirm('All data of account has gone, are you sure for delete account?')" ui-toggle-class="" >
                         <i class="fa fa-times text-danger text"></i>
                       </a>
                   </td>
