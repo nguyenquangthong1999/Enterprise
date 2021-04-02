@@ -39,7 +39,11 @@ html {
 .logo {
     width: 44px;
     height: 32px;
+    background-image: url(../images/white-logo.png);
     background-size: contain;
+}
+.menu-toggler {
+    background: none;
     width: 30px;
     border: none;
     position: relative;
@@ -91,10 +95,24 @@ html {
 h1 {
     font-size: 6rem;
     margin: 0 0 60px;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 h1::after {
     content: "Hi";
+    top: 0;
     animation: textanim 15s linear infinite;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    line-height: 100%;
+    justify-content: center;
+    align-items: center;
 }
 @keyframes textanim {
     25% {

@@ -66,3 +66,11 @@ Route::delete('semester/{id}','SemesterController@deleteSemester');
 Route::get('manager','ManagerController@ManagerDashboard') -> name('MANAGER');
 Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');
 Route::post('/filter-by-date','ManagerController@filter_by_date');
+
+//Guest Controller
+ 
+Route::get('guest','GuestController@GuestDashboard')->name('GUEST');
+Route::get('add_guest','GuestController@addGuest')->name('ADD_GUEST');
+Route::post('addguest','GuestController@addGuestProcess');
+
+

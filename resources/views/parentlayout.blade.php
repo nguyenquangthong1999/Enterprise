@@ -29,6 +29,7 @@
       @yield('student_dashboard')
       @yield('coordinator_dashboard')
       @yield('manager_dashboard')
+      @yield('guest_dashboard')
       <!-- Left navbar links -->
       {{-- <ul class="navbar-nav">
         <li class="nav-item">
@@ -63,6 +64,7 @@
       @yield('student_content')
       @yield('coordinator_content')
       @yield('manager_content')
+      @yield('guest_content')
       <!-- Main content -->
       <!-- /.content -->
     </div>

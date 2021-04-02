@@ -149,6 +149,23 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item has-treeview">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-street-view"></i>
+            <p>
+              Guest
+              <i class="fas fa-angle-left right"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{route('ADD_GUEST')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Assign Guest to Falcuty</p>
+              </a>
+            </li>
+          </ul>
+        </li>
         <li class="nav-item">
           <a href="{{Route('ADMIN')}}" class="nav-link active">
             <i class="nav-icon fas fa-sign-out-alt"></i>

@@ -4,12 +4,12 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Faculty</h1>
+          <h1 class="m-0 text-dark">Guest</h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
-            <li class="breadcrumb-item active">Faculty</li>
+            <li class="breadcrumb-item active">Coordinator</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
@@ -23,28 +23,17 @@
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Add New Faculty</h3>
+              <h3 class="card-title">Assign Guest to Faculty</h3>
             </div>
             <!-- /.card-header -->
             <!-- form start -->
-            <form action="{{url('addfaculity')}}" method="POST">
+            <form action="{{URL('addguest')}}" method="POST" >
               @csrf
               <div class="card-body">
                 <div class="form-group">
-                  <label for="">Assign Student To Faculity</label>
+                  <label for="">Email</label>
                   <select class="form-control" name="email">
-                    <option>Select Email Student</option>
-                    @foreach($data as $datas)
-                      @if($datas->account_number == 3)
-                        <option value="{{$datas->account_email}}">{{$datas->account_email}}</option>
-                      @endif
-                    @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="">Assign Guest To Faculity</label>
-                  <select class="form-control" name="email">
-                    <option>Select Email Guest </option>
+                    <option>Select Guest For Faculity</option>
                     @foreach($data as $datas)
                       @if($datas->account_number == 1)
                         <option value="{{$datas->account_email}}">{{$datas->account_email}}</option>
@@ -53,20 +42,27 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Name Faculty</label>
-                  <input type="text" name="namefaculty" class="form-control" id="namefaculty" placeholder="Enter Faculty" required>
+                  <label for="exampleInputEmail1">Guest Name</label>
+                  <input type="text" name="nameguest" class="form-control" placeholder="Enter Guest Name">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Description</label>
-                  <input type="text" name="description" class="form-control" id="description" placeholder="Description" required>
+                  <label for="">Faculty</label>
+                  <select class="form-control" id ="faculty" name="faculity_name">
+                    <option>Select Falcuty</option>
+                    @foreach($faculty as $item)
+                    <option value="{{$item -> faculity_name}}">{{$item -> faculity_name}}</option>
+                    @endforeach
+                  </select>
                 </div>
-                <button type="submit" class="btn btn-success ">Add</button>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Add</button>
+              </div>
             </form>
           </div>
-          <!-- /.card -->
         </div>
       </div>
-      <!-- /.row -->
-    </div><!-- /.container-fluid -->
-  </section>
+    </div>
+</section>
 @endsection

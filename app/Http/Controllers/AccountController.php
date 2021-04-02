@@ -121,9 +121,10 @@ class AccountController extends Controller
                 return Redirect()->Route('STUDENT');
             }elseif($check->account_number == 2){
                 return Redirect()->Route('COORDINATOR');
-                echo "Coordinator";
+                // echo "Coordinator";
             }elseif($check->account_number == 1){
-                echo "Guest";
+                Session::put('guest_email',$account_email);
+                return Redirect()->Route('GUEST')->with('guest_email',$account_email);
             }elseif ($check->account_number == 4){
                 return Redirect()->Route('MANAGER');
             }

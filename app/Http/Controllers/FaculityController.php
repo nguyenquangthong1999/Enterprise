@@ -28,6 +28,7 @@ class FaculityController extends Controller
      */
     public function add()
     {
+        
         $data = Account::all();
         // foreach($data as $thong){
         //     $hihi = $data->account_id;
