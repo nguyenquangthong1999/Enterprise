@@ -18,6 +18,7 @@
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body style="background-color: #666666;">
+	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -25,6 +26,7 @@
 					<span class="login100-form-title p-b-43">
 						Login Admin
 					</span>
+					
 					<form action="{{URL('executeLoginAdmin')}}" method="post">
 						@csrf
 						<div class="wrap-input100">
@@ -32,11 +34,14 @@
 							<span class="focus-input100"></span>
 							<span class="label-input100">Email</span>
 						</div>
+						
+						
 						<div class="wrap-input100 validate-input" data-validate="Password is required">
 							<input class="input100" type="password" name="admin_password">
 							<span class="focus-input100"></span>
 							<span class="label-input100">Password</span>
 						</div>
+
 						<div class="flex-sb-m w-full p-t-3 p-b-32">
 							<div class="contact100-form-checkbox">
 								<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
@@ -44,6 +49,7 @@
 									Remember me
 								</label>
 							</div>
+
 							<div>
 								<a href="" class="txt1">
 									Forgot Password?
@@ -51,20 +57,26 @@
 							</div>
 						</div>
 						<div>
+						
+
 							<a href="" class="login100-form-social-item flex-c-m bg3 m-r-5">
 								<i class="fa fa-google" aria-hidden="true"></i>
 							</a>
+
 							<a href="" class="login100-form-social-item flex-c-m bg2 m-r-5">
 								<i class="fa fa-github" aria-hidden="true"></i>
 							  </a>
 						</div>
 					</form>
 			</div>
+
 				<div class="login100-more" style="background-image: url('BE/images/1.jpeg');">
 				</div>
 			</div>
 		</div>
 	</div>
+	
+
 	<script src="{{asset('BE/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
 	<script src="{{asset('BE/vendor/animsition/js/animsition.min.js')}}"></script>
 	<script src="{{asset('BE/vendor/bootstrap/js/popper.js')}}"></script>
@@ -76,6 +88,7 @@
 	<script src="{{asset('BE/js/main.js')}}"></script>
 </body>
 </html> --}}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -89,6 +102,7 @@
   <link rel="stylesheet" href="{{asset('AdminTemplate/dist/css/adminlte.min.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
+
 <body class="hold-transition login-page" style="background : no-repeat url('https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80'); background-size: cover;">
 <div class="login-box">
   <div class="login-logo">
@@ -105,6 +119,7 @@
 				Session::put('message',null);
 			}
 		?>
+
 		<form action="{{URL('executeLoginAdmin')}}" method="post">
 			@csrf
 			<div class="input-group mb-3">
@@ -139,17 +154,23 @@
 			<!-- /.col -->
 			</div>
       </form>
+
+      
       <!-- /.social-auth-links -->
+
+     
     </div>
     <!-- /.login-card-body -->
   </div>
 </div>
 <!-- /.login-box -->
+
 <!-- jQuery -->
 <script src="{{asset('AdminTemplate/plugins/jquery/jquery.min.js')}}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{asset('AdminTemplate/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <!-- AdminLTE App -->
 <script src="{{asset('AdminTemplate/dist/js/adminlte.js')}}"></script>
+
 </body>
 </html>

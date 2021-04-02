@@ -27,21 +27,22 @@
          
             <div class="card-body">
                 <!-- Date -->
-            <form action="{{url('semester')}}" method="POST">
+            <form action="{{url('semester/'. $semester_edit->semester_id)}}" method="POST">
+                @method('patch')
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Name Semester</label>
-                    <input type="text" name="semester" required class="form-control" id="exampleInputEmail1" placeholder="Input name semester">
+                    <input type="text" name="semester" required class="form-control" value="{{$semester_edit->semester_name}}" id="exampleInputEmail1" placeholder="Input name semester">
                 </div>
                 
                 <div class="form-group">
                     <label>Start Date:</label>
-                    <input type="date" name="startdate" required id="datepicker" class="form-control">
+                    <input type="date" name="startdate" value="{{$semester_edit->start_date}}" required id="datepicker" class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>End Date:</label>
-                    <input type="date" name="enddate" required id="datepicker2" class="form-control">
+                    <input type="date" name="enddate" value="{{$semester_edit->end_date}}" required id="datepicker2" class="form-control">
                 </div>
             
                 <button type="submit" class="btn btn-primary">Submit</button>
