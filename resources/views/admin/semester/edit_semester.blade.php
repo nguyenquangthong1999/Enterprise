@@ -22,9 +22,15 @@
     <div class="container-fluid">
 
       <div class="row">
+<<<<<<< HEAD
  
         <div class="col-md-6">
          
+=======
+
+        <div class="col-md-6">
+
+>>>>>>> fd72615... fsadfsdfsdf
             <div class="card-body">
                 <!-- Date -->
             <form action="{{url('semester/'. $semester_edit->semester_id)}}" method="POST">
@@ -34,7 +40,10 @@
                     <label for="exampleInputEmail1">Name Semester</label>
                     <input type="text" name="semester" required class="form-control" value="{{$semester_edit->semester_name}}" id="exampleInputEmail1" placeholder="Input name semester">
                 </div>
+<<<<<<< HEAD
                 
+=======
+>>>>>>> fd72615... fsadfsdfsdf
                 <div class="form-group">
                     <label>Start Date:</label>
                     <input type="date" name="startdate" value="{{$semester_edit->start_date}}" required id="datepicker" class="form-control">
@@ -44,6 +53,7 @@
                     <label>End Date:</label>
                     <input type="date" name="enddate" value="{{$semester_edit->end_date}}" required id="datepicker2" class="form-control">
                 </div>
+<<<<<<< HEAD
             
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
@@ -51,6 +61,15 @@
           
         
           
+=======
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+
+
+>>>>>>> fd72615... fsadfsdfsdf
         </div>
         <!-- /.col -->
       </div>
@@ -58,4 +77,8 @@
     </div>
     <!-- /.container-fluid -->
   </section>
+<<<<<<< HEAD
 @endsection
+=======
+@endsection 
+>>>>>>> fd72615... fsadfsdfsdf
