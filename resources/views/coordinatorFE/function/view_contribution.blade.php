@@ -8,19 +8,22 @@
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
-          <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
           <li class="breadcrumb-item active">View Contribution</li>
         </ol>
       </div>
     </div>
   </div><!-- /.container-fluid -->
 </section>
+
 <section class="content">
+
   <!-- Default box -->
   <div class="card card-solid main3">
     @foreach($getData as $key => $getDatas)
     <div class="card-body pb-0 main1">  
       <div class="row d-flex align-items-stretch main2">
+       
         <div class="col-12 col-sm-6 col-md-6 d-flex align-items-stretch">
           <div class="card bg-light">
             <div class="card-header text-muted border-bottom-0">
@@ -44,15 +47,17 @@
             <div class="card-footer">
               <div class="text-right">
                 <button type="button" class="btn btn-sm bg-teal" data-toggle="modal" data-target="#addcomment">
-                  <i class="fas fa-comments btnCmt">Comment</i>
+                  <i class="fas fa-comments btnCmt"> Comment</i>
                 </button>
               </div>
             </div>
           </div>
         </div>
+        
+    
       </div>
     </div>
-    
+
     <div class="callout callout-info templateComment">
       <form action="" method="POST">
         @csrf
@@ -75,11 +80,13 @@
         </select>
       </div>
       <button type="button" class="btn btn-secondary btnClose">Close</button>
-      <button type="button" class="btn btn-info btn-add-comment btnComment">Comment<i class="fas fa-comments"></i></button>
+      <button type="button" class="btn btn-info btn-add-comment btnComment">Comment  <i class="fas fa-comments"></i> </button>
       </form>
     </div>
     @endforeach
+
   </div>
+
 </section>
 <style>
   .templateComment{

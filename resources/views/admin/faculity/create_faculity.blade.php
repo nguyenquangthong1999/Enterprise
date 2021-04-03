@@ -8,7 +8,7 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active">Faculty</li>
           </ol>
         </div><!-- /.col -->
@@ -20,10 +20,12 @@
       <div class="row">
         <!-- left column -->
         <div class="col-md-8">
+
           <!-- general form elements -->
           <div class="card card-primary">
             <div class="card-header">
               <h3 class="card-title">Add New Faculty</h3>
+               
             </div>
             <!-- /.card-header -->
             <!-- form start -->
@@ -42,17 +44,6 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="">Assign Guest To Faculity</label>
-                  <select class="form-control" name="email">
-                    <option>Select Email Guest </option>
-                    @foreach($data as $datas)
-                      @if($datas->account_number == 1)
-                        <option value="{{$datas->account_email}}">{{$datas->account_email}}</option>
-                      @endif
-                    @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
                   <label for="exampleInputEmail1">Name Faculty</label>
                   <input type="text" name="namefaculty" class="form-control" id="namefaculty" placeholder="Enter Faculty" required>
                 </div>
@@ -61,9 +52,11 @@
                   <input type="text" name="description" class="form-control" id="description" placeholder="Description" required>
                 </div>
                 <button type="submit" class="btn btn-success ">Add</button>
+              
             </form>
           </div>
           <!-- /.card -->
+
         </div>
       </div>
       <!-- /.row -->
