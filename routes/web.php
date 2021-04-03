@@ -79,10 +79,6 @@ Route::post('semester', 'SemesterController@addSemesterProcess');
 Route::delete('semester/{id}','SemesterController@deleteSemester');
 Route::get('semester/edit/{id}','SemesterController@editSemester');
 Route::patch('semester/{id}' , 'SemesterController@editSemesterProcess');
-<<<<<<< HEAD
-=======
-
->>>>>>> 17a8ec717d784c35b5b8c91cfba1c463199ed157
 //  Marketing manager
 Route::get('manager','ManagerController@ManagerDashboard') -> name('MANAGER');
 Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');
