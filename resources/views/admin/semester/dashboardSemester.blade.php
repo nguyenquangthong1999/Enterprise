@@ -55,7 +55,7 @@
                     <td>{{$item->semester_name}}</td>
                     <td>{{$item->start_date}}</td>
                     <td>{{$item->end_date}}</td>
-                    <td><a style="color: white" href="" class="btn btn-warning">Edit <i class="fas fa-pencil-alt"></a></td>
+                    <td><a style="color: white" href="{{url('semester/edit/' .$item->semester_id)}}" class="btn btn-warning">Edit <i class="fas fa-pencil-alt"></a></td>
                     <td>
                       <form action="{{url('semester/'.$item->semester_id)}}" method = "POST" onsubmit="return confirm('Are you sure delete semester?')">
                           @method('delete')

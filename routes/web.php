@@ -62,6 +62,8 @@ Route::get('semester', 'SemesterController@index')->name('MANAGEMENT_SEMESTER');
 Route::get('add_semester', 'SemesterController@add_semester')->name('ADD_SEMESTER');
 Route::post('semester', 'SemesterController@addSemesterProcess');
 Route::delete('semester/{id}','SemesterController@deleteSemester');
+Route::get('semester/edit/{id}','SemesterController@editSemester');
+Route::patch('semester/{id}' , 'SemesterController@editSemesterProcess');
 //  Marketing manager
 Route::get('manager','ManagerController@ManagerDashboard') -> name('MANAGER');
 Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');

@@ -27,4 +27,19 @@ class SemesterController extends Controller
         DB::table('semester')->where('semester_id' , $id)->delete();
         return redirect('semester')->with('status', 'Delete Semester Successful!');
     }
+    public function editSemester($id)
+    {
+        $semester_edit =  DB::table('semester')->where('semester_id' , $id)->first();
+        // dd($semester_edit);
+       return view('admin.semester.edit_semester', compact('semester_edit'));
+    }
+    public function editSemesterProcess(Request $request , $id)
+    {
+        DB::table('semester')->where('semester_id' , $id)->update([
+            'semester_name' =>$request->semester,
+            'start_date' =>$request->startdate,
+            'end_date' =>$request->enddate
+            ]);
+            return redirect('semester')->with('status', 'Update Semester Successful!');
+    }
 }
