@@ -8,14 +8,13 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
             <li class="breadcrumb-item active">Student</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
-
 <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -68,9 +67,7 @@
                     @endforeach
                   </select>
                 </div>
-             
                 {{-- <center> --}}
-
                 <div class="form-check">
                   <input type="checkbox" name="checkbox" class="form-check-input" id="exampleCheck1">
                   <label class="form-check-label" for="exampleCheck1">I agree to Terms and Conditions</label>
@@ -87,14 +84,12 @@
             </form>
           </div>
           <!-- /.card -->
-
         </div>
         <div class="col col-lg-4 d-md-12 d-sm-12 ">
         @foreach($semester as $item)
         <div class="card">
           <ul class="list-group list-group-flush">
             <div class="card-body">
-
               <div class="form-group">
                 <label for="">Semester Name : </label>
                 <input class="form-control" value = "{{$item -> semester_name}}" disabled="disabled"></input>
@@ -122,16 +117,12 @@
   <script>
     var deadline = document.getElementById('deadline').value;
     var message =  document.getElementById('message');
-
     var date = new Date();
-
     let year = date.getFullYear();
     let month = (1 + date.getMonth()).toString().padStart(2, '0');
     let day = date.getDate().toString().padStart(2, '0');
-  
     var now = year + '-' + month + '-' + day;
     var submit = document.getElementById('submit');
-    
     if (now > deadline) {
         submit.setAttribute("disabled", true);
         submit.classList.remove("btn-primary");

@@ -9,14 +9,13 @@
         </div><!-- /.col -->
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{Route('DASHBOARD')}}">Home</a></li>
             <li class="breadcrumb-item active">Student</li>
           </ol>
         </div><!-- /.col -->
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
-
 <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -72,11 +71,9 @@
                 <button type="submit" class="btn btn-primary">Update</button>
               </div>
               <!-- /.card-body -->
-
             </form>
           </div>
           <!-- /.card -->
-
         </div>
       </div>
       <!-- /.row -->

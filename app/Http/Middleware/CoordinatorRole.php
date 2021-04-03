@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Middleware;
-
 use Closure;
 use Illuminate\Http\Request;
 // use Auth;
-
 class CoordinatorRole
 {
     /**
@@ -15,7 +12,6 @@ class CoordinatorRole
      * @param  \Closure  $next
      * @return mixed
      */
-    
     public function handle($request, Closure $next)
     {
         // dd(Auth::check());
@@ -44,7 +40,6 @@ class CoordinatorRole
         // }else{
         //     return Redirect()->route('login');
         // }
-
         // if(Auth::check()){
         // $role = $request->input('account_number');
         // if($role == 2){
@@ -55,7 +50,6 @@ class CoordinatorRole
         //     return Redirect()->route('login');
         // }
         // return $next($request);
-
         // nên dùng bảng user để cái auth nó support tốt hơn
         // các trường đặt đừng có thêm tên table vô => account_id -> id account_email -> email ...
             // true thì nó vào đc mà ? cais ni t phai sai Auth::logout no ms forget dung ko thuong. um
