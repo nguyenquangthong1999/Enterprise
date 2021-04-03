@@ -1,11 +1,14 @@
 <?php
+
 namespace App\Http\Controllers;
-use DB;
-use Session;
-use App\Account;
+
 use Illuminate\Http\Request;
+use App\Account;
 use App\Http\Requests\AccountRequest;
 use Illuminate\Support\Facades\Redirect;
+use DB;
+use Session;
+
 class AccountController extends Controller
 {
     /**
@@ -18,6 +21,7 @@ class AccountController extends Controller
         $data = Account::all();
         return view('admin.account.manage_account',compact('data'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -27,6 +31,7 @@ class AccountController extends Controller
     {
         return view('admin.account.add_account');
     }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -73,6 +78,7 @@ class AccountController extends Controller
         // dd($getId);
         return view('admin.account.edit_account',compact('getId'));
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -95,6 +101,7 @@ class AccountController extends Controller
         $account2->update($input);
         return Redirect()->Route('MANAGEMENT_ACCOUNT')->with('message','Update account successfully!');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -107,9 +114,11 @@ class AccountController extends Controller
         $delete->delete();
         return Redirect()->Route('MANAGEMENT_ACCOUNT')->with('message','Delete account successfully!');
     }
+
     public function loginAccount(){
         return view('loginaccount');
     }
+
     public function executeLoginAccount(Request $request){
         $data1 = $request->all();
         $account_email = $request->account_email;
@@ -121,10 +130,9 @@ class AccountController extends Controller
                 return Redirect()->Route('STUDENT');
             }elseif($check->account_number == 2){
                 return Redirect()->Route('COORDINATOR');
-                // echo "Coordinator";
+                echo "Coordinator";
             }elseif($check->account_number == 1){
-                Session::put('guest_email',$account_email);
-                return Redirect()->Route('GUEST')->with('guest_email',$account_email);
+                echo "Guest";
             }elseif ($check->account_number == 4){
                 return Redirect()->Route('MANAGER');
             }

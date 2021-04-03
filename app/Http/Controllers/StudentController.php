@@ -1,17 +1,20 @@
 <?php
+
 namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 use DB;
 use Mail;
 use Session;
-use App\Account;
-use App\Comment;
-use App\Student;
-use App\Semester;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
-use App\Http\Requests\StudentRequest;
 use Illuminate\Support\Facades\Redirect;
+use App\Http\Requests\StudentRequest;
+use App\Student;
+use Carbon\Carbon;
+use App\Account;
+use App\Semester;
+use App\Comment;
+use Illuminate\Support\Facades\Route;
+
 class StudentController extends Controller
 {
     /**
@@ -26,6 +29,7 @@ class StudentController extends Controller
         $data = Student::all();
         return view('student.function.show',compact('data','getDataStudent','getImageStudent'));
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,6 +43,9 @@ class StudentController extends Controller
         $faculity = DB::table('faculity')->get();
         $getDataStudent = Student::all()->where('active' ,'=', '1');
         return view('student.function.upload_file', compact('faculity','getDataStudent','getImageStudent') )->with('semester' , $semester);
+        
+       
+
     }
     public function viewSemester()
     {
@@ -56,6 +63,7 @@ class StudentController extends Controller
      */
     public function store(StudentRequest $request)
     {
+       
         $add = new Student;
         // $add1 = new Comment;
         if($request->file('student_uploadimage')){
@@ -75,12 +83,14 @@ class StudentController extends Controller
         // $created_at = $now;
         $add->student_description = $request->student_description;
         $add->faculity_name = $request->faculity_name;
+        
         $now = Carbon::now('Asia/Ho_Chi_Minh')->format('d-m-Y');
         date_default_timezone_set('Asia/Ho_Chi_Minh');
         $add->created_at = now();
         //$add1->student_uploadfile = $filename;
         // dd($add1);
         $getId = Account::all();
+
         foreach($getId as $getIds){
             $getRoles = $getIds->account_number;
             // dd($getRoles);
@@ -89,17 +99,22 @@ class StudentController extends Controller
                 // dd($getEmailStudent);
             }
         }
+        
         $title_mail = "Student Upload".' '.$now;
         $link_comment = url('comment');
+         
         $data = array("title_mail"=>$title_mail,"body"=>$link_comment,'email'=>$getEmailStudent); //body of mail.blade.php
+            
         Mail::send('student.mail.mailtoCoordinator', ['data'=>$data] , function($message) use ($title_mail,$data){
             $message->to($data['email'])->subject($title_mail);
             $message->from($data['email'],$title_mail);
         });
         $add->save();
         //$add1->save();
+        
         return Redirect()->Route('SHOW_UPLOAD')->with('message','Upload File Successfully!');
     }
+
     /**
      * Display the specified resource.
      *
@@ -108,8 +123,9 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -121,6 +137,7 @@ class StudentController extends Controller
         $getId =  Student::find($student_id);
         return view('student.function.edit',compact('getId'));
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -153,8 +170,10 @@ class StudentController extends Controller
         $input['updated_at'] = now();
         $student->update($input);
         // dd($student);
+
         return Redirect()->Route('SHOW_UPLOAD')->with('message','Update Your Upload Successfully!');
     }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -163,8 +182,9 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        
+        //
     }
+
     public function StudentDashboard(){
         // $getDataStudent = Student::all()->where('active' ,'=', '1');
         $getDataStudent = Student::all();
@@ -175,6 +195,7 @@ class StudentController extends Controller
         return view('student.dashboardStudent',compact('getDataStudent','getImageStudent'));
        
     }
+
     public function checkGrade(){
         $getImageStudent = Account::all();
         $getDataStudent = Student::all();

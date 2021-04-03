@@ -15,6 +15,7 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
+
   @if(session()->has('message'))
         <div class="alert alert-success">
           {!! session()->get('message') !!}
@@ -24,10 +25,12 @@
           {!! session()->get('error') !!}
         </div>
   @endif
+  
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
       <div class="row">
+ 
         <div class="col-12">
           <br>
           @if (session('status'))
@@ -45,6 +48,7 @@
                   <th>Start Date</th>
                   <th>End Date</th>
                   <th>Add Submission</th>
+                  
                 </tr>
                 </thead>
                 <tbody>
@@ -62,6 +66,7 @@
             <!-- /.card-body -->
           </div>
           <!-- /.card -->
+
           <!-- /.card -->
         </div>
         <!-- /.col -->
