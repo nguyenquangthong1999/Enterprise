@@ -111,6 +111,4 @@
     <h1 class="m-0 text-dark">Please <a href= "{{route('ACCOUNT')}}">login</a> first!</h1>
   </div>
 @endif
-
-
 @endsection
