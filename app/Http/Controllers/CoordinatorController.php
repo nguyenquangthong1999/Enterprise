@@ -40,10 +40,9 @@ class CoordinatorController extends Controller
         DB::table('cordinator')->insert([
             'cordinator_name' => $request->namecoordinator,
             'cordinator_email' => $request->email,
-            'cordinator_phone' => $request->phone,
             'faculity_name' => $request->faculity_name,
         ]);
-        return redirect('management_coordinator')->with('status', 'Add Coordinator Successful!');
+        return redirect('management_coordinator')->with('message', 'Assign Coordinator To Faculity Successfully!');
     }
     /**
      * Show the form for editing the specified resource.
@@ -63,10 +62,9 @@ class CoordinatorController extends Controller
         DB::table('cordinator')->where('cordinator_id', $id)->update([
             'cordinator_name' => $request->namecoordinator,
             'cordinator_email' => $request->email,
-            'cordinator_phone' => $request->phone,
             'faculity_name' => $request->faculity_name,
         ]);
-         return redirect('management_coordinator')->with('status', 'Update Coordinator Successful!');
+         return redirect('management_coordinator')->with('message', 'Update Coordinator To Faculity Successfully!');
     }
 
     /**
@@ -79,7 +77,7 @@ class CoordinatorController extends Controller
     {
         //
         DB::table('cordinator')->where('cordinator_id', $id)->delete();
-        return redirect('management_coordinator')->with('status', 'Delete Coordinator Successful!');
+        return redirect('management_coordinator')->with('message', 'Delete Coordinator To Faculity Successfully!');
 
     }
     // public function contributions()
@@ -109,19 +107,15 @@ class CoordinatorController extends Controller
         // dd($getData);
         return view('coordinatorFE.function.view_contribution',compact('getData','getImageCoordinator'));
     }
-    public function executecomment(Request $request){
-        // $getData = Student::all();
-        // $getStudentId = Student::where('student_id',$getData['student_id'])->get();
-        // dd($getStudentId);
-        // $data = $request->all();
-        $setCmt123 = new Comment;
-        $setCmt123->comment = $request->comment;
-        $setCmt123->student_uploadfile = $request->student_uploadfile;
-        $setCmt123->student_id = $request->student_id;
-        $setCmt123->comment = $request->comment;
-        $setCmt123->grade =  $request->grade;
-        $setCmt123->save();
+    public function executecomment(Request $request,$student_id){
+        $check = DB::table('student')
+        ->where('student_id' , $student_id)
+        ->update([
+            'comment' => $request->comment,
+            'grade' => $request->grade,
+        ]);
     }
+
     //Làm tiếp phần duyệt bài viết
     public function review_post()
     {
@@ -132,7 +126,7 @@ class CoordinatorController extends Controller
     public function delete_post($id)
     {
         DB::table('student')->where('student_id', $id)->delete();
-        return redirect('review')->with('status', 'Delete Post Successful!');
+        return redirect('review')->with('message', 'Delete Post Successfully!');
 
     }
     public function publish_post($id)
@@ -140,6 +134,6 @@ class CoordinatorController extends Controller
         $check = DB::table('student')
         ->where('student_id' , $id)
         ->update(['active' => '1']);
-        return redirect('review')->with('message', 'Publish Post  Successful!');
+        return redirect('review')->with('message', 'Publish Post  Successfully!');
     }
 }

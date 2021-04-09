@@ -5,7 +5,7 @@ class Coordinator extends Model
 {
     public $timestamps = false; //set time to false
     protected $fillable = [
-    	'cordinator_name', 'coordinator_email','coordinator_phone', 'coordinator_address',
+    	'cordinator_name', 'coordinator_email', 'coordinator_address',
     ];
     protected $primaryKey = 'cordinator_id';
  	protected $table = 'cordinator';

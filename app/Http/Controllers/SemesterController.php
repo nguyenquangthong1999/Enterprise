@@ -20,12 +20,12 @@ class SemesterController extends Controller
             'start_date' => $request->startdate,
             'end_date' => $request->enddate
         ]);
-        return redirect('semester')->with('status', 'Create Semester Successful!');
+        return redirect('semester')->with('message', 'Create Semester Successfully!');
     }
     public function deleteSemester($id)
     {
         DB::table('semester')->where('semester_id' , $id)->delete();
-        return redirect('semester')->with('status', 'Delete Semester Successful!');
+        return redirect('semester')->with('message', 'Delete Semester Successfully!');
     }
     public function editSemester($id)
     {
@@ -40,6 +40,6 @@ class SemesterController extends Controller
             'start_date' =>$request->startdate,
             'end_date' =>$request->enddate
             ]);
-            return redirect('semester')->with('status', 'Update Semester Successful!');
+            return redirect('semester')->with('message', 'Update Semester Successfully!');
     }
 }

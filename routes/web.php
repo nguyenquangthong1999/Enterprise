@@ -57,6 +57,7 @@ Route::post('executeComment/{student_id}','CoordinatorController@executecomment'
 // Route::post('add_comment', 'CoordinatorController@addCommentProcess');
 Route::patch('publish/{id}','CoordinatorController@publish_post');
 // Route::patch('addcomment/{id}','CoordinatorController@addCommentProcess');
+
 // Semester 
 Route::get('semester', 'SemesterController@index')->name('MANAGEMENT_SEMESTER');
 Route::get('add_semester', 'SemesterController@add_semester')->name('ADD_SEMESTER');

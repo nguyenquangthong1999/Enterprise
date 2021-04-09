@@ -43,7 +43,7 @@ class FaculityController extends Controller
             'faculity_description' => $request->description,
             'account_email' => $request->email
         ]);
-        return redirect()->route('MANAGEMENT_FACULITY')->with('status', 'Created Faculty Successful!');
+        return redirect()->route('MANAGEMENT_FACULITY')->with('message', 'Created Faculty Successfully!');
     }
     /**
      * Show the form for editing the specified resource.
@@ -62,7 +62,7 @@ class FaculityController extends Controller
             'faculity_name' => $request->namefaculty,
             'faculity_description' => $request->description
         ]);
-         return redirect()->route('MANAGEMENT_FACULITY')->with('status', 'Updated Faculty Successful!');
+         return redirect()->route('MANAGEMENT_FACULITY')->with('message', 'Updated Faculty Successfully!');
     }
     /**
      * Remove the specified resource from storage.
@@ -73,6 +73,6 @@ class FaculityController extends Controller
     public function delete($id)
     {
         DB::table('faculity')->where('faculity_id', $id)->delete();
-        return redirect()->route('MANAGEMENT_FACULITY')->with('status', 'Delete Faculty Successful!');
+        return redirect()->route('MANAGEMENT_FACULITY')->with('message', 'Delete Faculty Successfully!');
     }
 }

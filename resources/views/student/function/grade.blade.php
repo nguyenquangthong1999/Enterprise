@@ -59,7 +59,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($data1 as $datas)
+                @foreach($getDataStudent as $datas)
                 <tr>
                   <td>{{$loop->iteration}}</td>
                   <td>{{$datas->student_uploadfile}}</td>
@@ -76,7 +76,7 @@
                       @endif
                   </td>
                   <td>
-                      @if($datas->grade == 0)
+                    @if(($datas->grade == NULL) ||($datas->grade == 0))
                         Waiting For Approval
                       @else
                         Commented 

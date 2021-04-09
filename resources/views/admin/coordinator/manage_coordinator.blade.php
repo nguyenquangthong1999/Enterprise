@@ -15,15 +15,19 @@
       </div>
     </div><!-- /.container-fluid -->
   </section>
-  @if(session()->has('message'))
-        <div class="alert alert-success">
-          {!! session()->get('message') !!}
-        </div>
-        @elseif(session()->has('error'))
-        <div class="alert alert-danger">
-          {!! session()->get('error') !!}
-        </div>
-  @endif
+  <center>
+    <div class="col-sm-5">
+      @if(session()->has('message'))
+      <div class="alert alert-success">
+        {!! session()->get('message') !!}
+      </div>
+      @elseif(session()->has('error'))
+      <div class="alert alert-danger">
+        {!! session()->get('error') !!}
+      </div>
+      @endif
+   </div>
+  </center>
   <!-- Main content -->
   <section class="content">
     <div class="container-fluid">
@@ -31,11 +35,6 @@
       <div class="row">
         <div class="col-12">
           <br>
-          @if (session('status'))
-          <div class="alert alert-success">
-            {{ session('status') }}
-          </div>
-          @endif
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -44,7 +43,6 @@
                 <th>No</th>
                   <th>Coordinator Name</th>
                   <th>Email</th>
-                  <th>Phone Number</th>
                   <th>Falculty</th>
                   <th>Edit Action</th>
                   <th>Delete Action</th>
@@ -56,7 +54,6 @@
                     <td>{{$loop->iteration}}</td>
                     <td>{{$item->cordinator_name}}</td>
                     <td>{{$item->cordinator_email}}</td>
-                    <td>{{$item->cordinator_phone}}</td>
                     <td>{{$item->faculity_name}}</td>
                     <td><a style="color: white" href="{{ url('management_coordinator/edit_coordinator/'.$item->cordinator_id )}}" class="btn btn-warning">Edit <i class="fas fa-pencil-alt"></a></td>
                     <td>

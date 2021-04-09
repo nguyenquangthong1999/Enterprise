@@ -47,10 +47,6 @@
                   <input type="text" name="namecoordinator" class="form-control" placeholder="Enter Coordinator Name" value="{{$coordinator->cordinator_name}}">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">Phone Number</label>
-                  <input type="text" name="phone" class="form-control" placeholder="Phone number"  value="{{$coordinator->cordinator_phone}}">
-                </div>
-                <div class="form-group">
                   <label for="">Faculty</label>
                   <select class="form-control" name="faculity_name">
                     @foreach($faculity as $item)

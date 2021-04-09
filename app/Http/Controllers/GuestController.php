@@ -32,7 +32,7 @@ class GuestController extends Controller
             'guest_email' => $request->email,
             'faculity_name' => $request->faculity_name, 
         ]);
-        return redirect('dashboardAdmin')->with('status', 'Add Guest Successful!');
+        return redirect('dashboardAdmin')->with('message', 'Add Guest Successful!');
     }
     
     

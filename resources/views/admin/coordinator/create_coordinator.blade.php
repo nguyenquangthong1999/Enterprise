@@ -46,10 +46,6 @@
                   <input type="text" name="namecoordinator" class="form-control" placeholder="Enter Coordinator Name">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">Phone Number</label>
-                  <input type="text" name="phone" class="form-control" placeholder="Phone number">
-                </div>
-                <div class="form-group">
                   <label for="">Faculty</label>
                   <select class="form-control" id ="faculty" name="faculity_name">
                     <option>Select Falcuty</option>

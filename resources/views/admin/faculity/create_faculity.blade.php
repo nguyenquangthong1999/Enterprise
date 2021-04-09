@@ -15,6 +15,7 @@
       </div><!-- /.row -->
     </div><!-- /.container-fluid -->
   </div>
+
 <section class="content">
     <div class="container-fluid">
       <div class="row">
@@ -36,17 +37,6 @@
                     <option>Select Email Student</option>
                     @foreach($data as $datas)
                       @if($datas->account_number == 3)
-                        <option value="{{$datas->account_email}}">{{$datas->account_email}}</option>
-                      @endif
-                    @endforeach
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="">Assign Guest To Faculity</label>
-                  <select class="form-control" name="email">
-                    <option>Select Email Guest </option>
-                    @foreach($data as $datas)
-                      @if($datas->account_number == 1)
                         <option value="{{$datas->account_email}}">{{$datas->account_email}}</option>
                       @endif
                     @endforeach
