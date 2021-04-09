@@ -46,7 +46,7 @@
                 </div>
               </div>
               <div class="card-footer">
-                <button type="submit" class="btn btn-success ">Update Guest</button>
+                <button type="submit" class="btn btn-success ">Update</button>
               </div>
             </form>
           <!-- /.card -->

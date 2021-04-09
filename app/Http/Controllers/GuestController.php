@@ -37,7 +37,7 @@ class GuestController extends Controller
             'guest_email' => $request->email,
             'faculity_name' => $request->faculity_name, 
         ]);
-        return redirect('dashboardAdmin')->with('message', 'Add Guest Successful!');
+        return redirect()->route('MANAGEMENT_GUEST')->with('message', 'Add Guest Successfully!');
     }
     public function edit($id){
  
@@ -51,11 +51,11 @@ class GuestController extends Controller
             'guest_name' => $request->name,
             'faculity_name' => $request->faculity_name,
         ]);
-        return redirect('management_guest')->with('message', 'Update Guest Successfully!');
+        return redirect()->route('MANAGEMENT_GUEST')->with('message', 'Update Guest Successfully!');
     }
     public function delete($id){
         DB::table('guest')->where('guest_id', $id)->delete();
-        return redirect('management_guest')->with('message', 'Delete Guest Successfully!');
+        return redirect()->route('MANAGEMENT_GUEST')->with('message', 'Delete Guest Successfully!');
     }
     
 
