@@ -64,7 +64,7 @@ class CoordinatorController extends Controller
             'cordinator_email' => $request->email,
             'faculity_name' => $request->faculity_name,
         ]);
-         return redirect('management_coordinator')->with('message', 'Update Coordinator To Faculity Successfully!');
+         return redirect('management_coordinator')->with('message', 'Update Coordinator Successfully!');
     }
 
     /**
@@ -77,7 +77,7 @@ class CoordinatorController extends Controller
     {
         //
         DB::table('cordinator')->where('cordinator_id', $id)->delete();
-        return redirect('management_coordinator')->with('message', 'Delete Coordinator To Faculity Successfully!');
+        return redirect('management_coordinator')->with('message', 'Delete Coordinator Successfully!');
 
     }
     // public function contributions()

@@ -71,9 +71,14 @@ Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');
 Route::post('/filter-by-date','ManagerController@filter_by_date');
 
 //Guest Controller
- 
+
 Route::get('guest','GuestController@GuestDashboard')->name('GUEST');
+Route::get('management_guest','GuestController@manage_guest')->name('MANAGEMENT_GUEST');
 Route::get('add_guest','GuestController@addGuest')->name('ADD_GUEST');
 Route::post('addguest','GuestController@addGuestProcess');
+Route::get('management_guest/edit/{id}','GuestController@edit');
+Route::patch('management_guest/{id}','GuestController@edit_process');
+Route::delete('management_guest/{id}','GuestController@delete');
+
 
 

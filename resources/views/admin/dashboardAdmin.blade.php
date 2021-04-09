@@ -159,9 +159,9 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{route('ADD_GUEST')}}" class="nav-link">
+              <a href="{{route('MANAGEMENT_GUEST')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Assign Guest to Falcuty</p>
+                <p>Management Guest</p>
               </a>
             </li>
           </ul>
