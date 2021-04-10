@@ -61,7 +61,6 @@ class CoordinatorController extends Controller
     {
         DB::table('cordinator')->where('cordinator_id', $id)->update([
             'cordinator_name' => $request->namecoordinator,
-            'cordinator_email' => $request->email,
             'faculity_name' => $request->faculity_name,
         ]);
          return redirect('management_coordinator')->with('message', 'Update Coordinator Successfully!');

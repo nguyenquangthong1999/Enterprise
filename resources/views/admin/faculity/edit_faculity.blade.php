@@ -40,7 +40,7 @@
                   <input type="text" name="description" class="form-control" id="description" required="" value="{{$faculity->faculity_description}}">
                 </div>
               <!-- /.card-body -->
-                <button type="submit" class="btn btn-success ">Update Faculty</button>
+                <button type="submit" class="btn btn-success ">Update</button>
             </form>
           </div>
           <!-- /.card -->
