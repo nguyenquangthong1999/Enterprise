@@ -92,15 +92,15 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="">Semester Name : </label>
-                <input class="form-control" value = "{{$item -> semester_name}}" disabled="disabled"></input>
+                <input readonly class="form-control-plaintext"  value = "{{$item -> semester_name}}" ></input>
               </div>
               <div class="form-group">
                 <label for="">Start Day :</label>
-                <input class="form-control" value = "{{$item -> start_date}}" disabled="disabled"></input>
+                <input readonly class="form-control-plaintext"  value = "{{$item -> start_date}}"></input>
               </div>
               <div class="form-group">
                 <label for="">Deadline :</label>
-                <input class="form-control" id="deadline" value = "{{$item -> end_date}}" disabled="disabled"></input>
+                <input readonly class="form-control-plaintext"  id="deadline" value = "{{$item -> end_date}}"></input>
               </div>
               <div class="form-group">
                 <label for="" id= message ></label>
