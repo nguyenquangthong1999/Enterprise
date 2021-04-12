@@ -118,8 +118,9 @@ class StudentController extends Controller
      */
     public function edit($student_id)
     {
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
         $getId =  Student::find($student_id);
-        return view('student.function.edit',compact('getId'));
+        return view('student.function.edit',compact('getId','getDataStudent'));
     }
     /**
      * Update the specified resource in storage.
