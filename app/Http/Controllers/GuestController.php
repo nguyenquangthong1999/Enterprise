@@ -38,9 +38,12 @@ class GuestController extends Controller
             'faculity_name' => $request->faculity_name, 
         ]);
         return redirect('management_guest')->with('message', 'Add Guest Successful!');
+<<<<<<< HEAD
 
         return redirect()->route('MANAGEMENT_GUEST')->with('message', 'Add Guest Successfully!');
 
+=======
+>>>>>>> 9b4c8c7df500e9e4c23ccac5f84dd915d2593eb7
     }
     public function edit($id){
  
