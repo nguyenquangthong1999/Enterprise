@@ -95,10 +95,8 @@ class ManagerController extends Controller
         return view('marketing_manager.function.dowload_zip', compact('getDataStudent', 'contribution' ,'semester','faculty','coordinator','contributionIT','contributionBS','contributionDesign' ,'contributionMarketing','contributionVV','created'));
         
         // o day se~ viet dowload zip ne
-        
-       
-
-    }
+         }
+         
     public function downloadZip()
     {
        
