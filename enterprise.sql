@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 02, 2021 lúc 05:41 PM
+-- Thời gian đã tạo: Th4 10, 2021 lúc 01:30 PM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 7.4.15
 
@@ -40,13 +40,24 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`account_id`, `account_email`, `account_password`, `account_image`, `account_number`) VALUES
-(63, 'student1@gmail.com', '123', '7.png', 3),
-(64, 'coordinator@gmail.com', '123', '13491623037137191119846933917888629541593356o-16099965890341112403504.jpg', 2),
-(65, 'coordinator2@gmail.com', '123', 'Da Nang 2007 069.jpg', 2),
-(66, 'manager@gmail.com', '123', '5.jpg', 4),
-(67, 'vinhnh23@gmail.com', '123', '131277361_424973802214716_3871100406472097678_o.jpg', 2),
-(68, 'Guest@gmail.com', '123456', '5f24b446b9fb952c93895d54afb0e8c2.jpg', 1),
-(69, 'guest1@gmail.com', '12345', '5f24b446b9fb952c93895d54afb0e8c2.jpg', 1);
+(1, 'manager@gmail.com', 'manager', '1.jpg', 4),
+(2, 'coordinator01@gmail.com', 'coordinator01', '1.jpg', 2),
+(3, 'coordinator02@gmail.com', 'coordinator02', '1.jpg', 2),
+(4, 'coordinator03@gmail.com', 'coordinator03', '1.jpg', 2),
+(5, 'coordinator04@gmail.com', 'coordinator04', '1.jpg', 2),
+(6, 'coordinator05@gmail.com', 'coordinator05', '1.jpg', 2),
+(7, 'student01@gmail.com', 'student01', '1.jpg', 3),
+(8, 'student02@gmail.com', 'student02', '1.jpg', 3),
+(9, 'student03@gmail.com', 'student03', '1.jpg', 3),
+(10, 'student04@gmail.com', 'student04', '1.jpg', 3),
+(11, 'student05@gmail.com', 'student05', '1.jpg', 3),
+(12, 'student06@gmail.com', 'student06', '1.jpg', 3),
+(13, 'student07@gmail.com', 'student07', '1.jpg', 3),
+(14, 'student08@gmail.com', 'student08', '1.jpg', 3),
+(15, 'student09@gmail.com', 'student09', '1.jpg', 3),
+(16, 'student10@gmail.com', 'student10', '1.jpg', 3),
+(17, 'guest01@gmail.com', 'guest01', '1.jpg', 1),
+(18, 'guest02@gmail.com', 'guest02', '1.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -65,7 +76,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_email`, `admin_password`) VALUES
-(3, 'admin@gmail.com', 'admin');
+(1, 'admin@gmail.com', 'admin');
 
 -- --------------------------------------------------------
 
@@ -81,14 +92,6 @@ CREATE TABLE `comment` (
   `student_id` int(11) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Đang đổ dữ liệu cho bảng `comment`
---
-
-INSERT INTO `comment` (`comment_id`, `comment`, `grade`, `student_uploadfile`, `student_id`) VALUES
-(38, 'test', 1, '20200507_pc_bigbnr_staycation.webp', 57),
-(39, 'it\'s good', 4, 'test 8', 68);
-
 -- --------------------------------------------------------
 
 --
@@ -99,7 +102,6 @@ CREATE TABLE `cordinator` (
   `cordinator_id` int(11) NOT NULL,
   `cordinator_name` varchar(255) NOT NULL,
   `cordinator_email` varchar(255) NOT NULL,
-  `cordinator_phone` int(15) NOT NULL,
   `faculity_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -107,10 +109,12 @@ CREATE TABLE `cordinator` (
 -- Đang đổ dữ liệu cho bảng `cordinator`
 --
 
-INSERT INTO `cordinator` (`cordinator_id`, `cordinator_name`, `cordinator_email`, `cordinator_phone`, `faculity_name`) VALUES
-(7, 'Nguyễn Văn A', 'coordinator@gmail.com', 949983492, 'Business'),
-(8, 'Hoàng Như Vĩnh', 'coordinator2@gmail.com', 12345678, 'Information Technology'),
-(9, 'Hoàng Như Vĩnh123', 'vinhnh23@gmail.com', 949983492, 'Design');
+INSERT INTO `cordinator` (`cordinator_id`, `cordinator_name`, `cordinator_email`, `faculity_name`) VALUES
+(1, 'coordinator01', 'coordinator01@gmail.com', 'IT'),
+(2, 'coordinator02', 'coordinator02@gmail.com', 'BI'),
+(3, 'coordinator03', 'coordinator03@gmail.com', 'MK'),
+(4, 'coordinator04', 'coordinator04@gmail.com', 'DE'),
+(5, 'coordinator05', 'coordinator05@gmail.com', 'VOV');
 
 -- --------------------------------------------------------
 
@@ -130,12 +134,11 @@ CREATE TABLE `faculity` (
 --
 
 INSERT INTO `faculity` (`faculity_id`, `faculity_name`, `faculity_description`, `account_email`) VALUES
-(10, 'Information Technology', '1', 'student@gmail.com'),
-(11, 'Business', 'Business', ''),
-(12, 'Vovinam', 'Vovinam', ''),
-(13, 'Design', 'Design', ''),
-(14, 'Marketing', 'Marketing', ''),
-(15, 'QTKD', 'Tutorials về HTML, CSS, UI, UX sẽ được tổng hợp tại khóa học này, các video có nội dung ngắn gọn, súc tích giúp học viên có thể ứng dụng ngay vào thực tế', '');
+(1, 'IT', 'Information Technology', 'student01@gmail.com'),
+(3, 'BI', 'Business', 'student03@gmail.com'),
+(5, 'MK', 'Marketing', 'student05@gmail.com'),
+(7, 'DE', 'Design', 'student07@gmail.com'),
+(9, 'VOV', 'Vovinam', 'student09@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -155,8 +158,16 @@ CREATE TABLE `guest` (
 --
 
 INSERT INTO `guest` (`guest_id`, `guest_name`, `guest_email`, `faculity_name`) VALUES
-(1, 'Hiếu Lưu', 'Guest@gmail.com', 'Information Technology'),
-(6, 'Thông', 'guest1@gmail.com', 'Marketing');
+(8, 'guest01', 'guest01@gmail.com', 'IT'),
+(9, 'guest01', 'guest01@gmail.com', 'BI'),
+(10, 'guest01', 'guest01@gmail.com', 'MK'),
+(11, 'guest01', 'guest01@gmail.com', 'DE'),
+(12, 'guest01', 'guest01@gmail.com', 'VOV'),
+(13, 'guest02', 'guest02@gmail.com', 'IT'),
+(14, 'guest02', 'guest02@gmail.com', 'BI'),
+(15, 'guest02', 'guest02@gmail.com', 'MK'),
+(16, 'guest02', 'guest02@gmail.com', 'DE'),
+(17, 'guest02', 'guest02@gmail.com', 'VOV');
 
 -- --------------------------------------------------------
 
@@ -176,11 +187,9 @@ CREATE TABLE `semester` (
 --
 
 INSERT INTO `semester` (`semester_id`, `semester_name`, `start_date`, `end_date`) VALUES
-(3, 'Spring 2021', '2021-03-10', '2021-03-22'),
-(4, 'Spring 2030', '2021-03-20', '2021-03-24'),
-(5, 'Spring 2045', '2021-03-25', '2021-03-31'),
-(6, 'Summer 2020', '2021-03-26', '2021-03-31'),
-(7, 'Summer 2022', '2021-03-27', '2021-03-31');
+(1, 'Summer 2020', '2021-03-26', '2021-03-31'),
+(2, 'Spring 2021', '2021-03-10', '2021-03-22'),
+(3, 'Summer 2022', '2021-03-27', '2021-04-30');
 
 -- --------------------------------------------------------
 
@@ -206,20 +215,7 @@ CREATE TABLE `student` (
 --
 
 INSERT INTO `student` (`student_id`, `created_at`, `student_uploadfile`, `student_uploadimage`, `student_description`, `updated_at`, `active`, `faculity_name`, `comment`, `grade`) VALUES
-(57, '2021-03-26 14:28:21', '20200507_pc_bigbnr_staycation.webp', '7.png', 'tesst lan 2', NULL, 1, 'Information Technology', NULL, NULL),
-(58, NULL, 'test 1', 'test 1', 'test 1', NULL, 1, '', NULL, NULL),
-(59, '2021-03-26 14:36:53', '20200507_pc_bigbnr_staycation.webp', '3.png', 'tesst lan 2', NULL, 1, 'Information Technology', NULL, NULL),
-(60, '2021-03-26 14:37:41', '20200507_pc_bigbnr_staycation.webp', '840x417en.png', 'tesst lan 6', NULL, 0, 'Marketing', NULL, NULL),
-(61, '2021-03-27 03:02:10', '56933159.webp', '7.png', 'tesst lan 2', NULL, 0, 'Business', NULL, NULL),
-(62, '2021-03-27 03:06:40', 'AE - Sidebar - Filters.rplib', '56933159.webp', 'abcyz', NULL, 0, 'Vovinam', NULL, NULL),
-(63, NULL, 'test 2', 'test 2', 'test 2', NULL, 0, 'Business', NULL, NULL),
-(64, NULL, 'test 3', 'test 3', 'test 3', NULL, 0, 'Marketing', NULL, NULL),
-(65, NULL, 'test 5', 'test 5', 'test 5', NULL, 0, 'Information Technology', NULL, NULL),
-(66, NULL, 'test 6', 'test 6', 'test 6', NULL, 0, 'Design', NULL, NULL),
-(67, NULL, 'test 7', 'test 7', 'test 7', NULL, 0, 'Marketing', NULL, NULL),
-(68, '0000-00-00 00:00:00', 'test 8', 'test 8', 'test 8', NULL, 1, 'Marketing', NULL, NULL),
-(70, NULL, 'test 9', 'test 9', 'test 9', NULL, 0, 'Vovinam', NULL, NULL),
-(71, NULL, 'test 10', 'test 10', 'test 10', NULL, 0, 'Vovinam', NULL, NULL);
+(72, '2021-04-09 08:11:22', '1.jpg', '1.jpg', '1', NULL, 1, 'IT', 'a', 1);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -283,7 +279,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT cho bảng `account`
 --
 ALTER TABLE `account`
-  MODIFY `account_id` int(15) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `account_id` int(15) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
 
 --
 -- AUTO_INCREMENT cho bảng `admin`
@@ -295,25 +291,25 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `comment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT cho bảng `cordinator`
 --
 ALTER TABLE `cordinator`
-  MODIFY `cordinator_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `cordinator_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `faculity`
 --
 ALTER TABLE `faculity`
-  MODIFY `faculity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `faculity_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT cho bảng `guest`
 --
 ALTER TABLE `guest`
-  MODIFY `guest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `guest_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT cho bảng `semester`
@@ -325,7 +321,7 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT cho bảng `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `student_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
