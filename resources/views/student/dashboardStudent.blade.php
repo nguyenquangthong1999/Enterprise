@@ -135,7 +135,7 @@
                 <div class="text-right">
                  
                   <a href="uploadfile/{{$getDatas->student_uploadfile}}" class="btn btn-info">
-                    <i class="fas fa-eye"></i> Dowload To View
+                    <i class="fas fa-eye"></i> Download To View
                   </a>
                 </div>
               </div> --}}
