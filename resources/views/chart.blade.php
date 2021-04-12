@@ -47,45 +47,13 @@
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
-    // $( function() {
-    //   $( "#datepicker" ).datepicker(
-    //     {
-    //       dateFormat:"yy-mm-dd"
-    //     });
-    // });
-    // $( function() {
-    //   $( "#datepicker2" ).datepicker(
-    //     {
-    //       dateFormat:"yy-mm-dd"
-    //     });
-    // });
-    // $('#btn-dashboard-filter').click(function(){
-    //   var _token = $('input[name="_token"]').val();
-    //   var from_date = $('#datepicker').val();
-    //   var to_date = $('#datepicker2').val();
-    //   $.ajax({
-    //     url: "{{url('/filter-by-date')}}",
-    //     method: "POST",
-    //     dateType:"JSON",
-    //     data:{from_date:from_date,to_date:to_date,_token:_token},
-    //     success:function(data)
-    //     {
-    //       chart.setData(data);
-    //     }
-    //   });
+    
     // });
     $(function() {
       new Morris.Bar({
       // ID of the element in which to draw the chart.
       element: 'Chart_bar',
-      // Chart data records -- each entry in this array corresponds to a point on
-      // the chart.
-      // data: [
-      //  {label:"Total Contribution", value:<?php echo $contribution ?>, color:colorDanger},
-      //  {label:"Total Semester", value:<?php echo $semester ?>, color:color2},
-      //  {label:"Total Faculty", value:<?php echo $faculty ?>,color:color3},
-      //  {label:"Total Coordinator", value:<?php echo $coordinator ?>,color:color4}
-      //  ]
+      
       data: [
       { semester: 'Information Technology', value: <?php echo $contributionIT ?> },
       { semester: 'Business', value: <?php echo $contributionBS ?> },

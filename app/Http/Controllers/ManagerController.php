@@ -56,25 +56,7 @@ class ManagerController extends Controller
         return view('marketing_manager.function.statistics_contribution', compact('getDataStudent', 'contribution' ,'semester','faculty','coordinator','contributionIT','contributionBS','contributionDesign' ,'contributionMarketing','contributionVV','created'));
     }
 
-    // public function filter_by_date(Request $request)
-    // {
-    //     //chart
-    //     $data = $request->all();
-    //     $from_date = $data['from_date'];
-    //     $to_date = $data['to_date'];
-    //     $get = Student::whereBetween('created_at',[$from_date,$to_date])->orderBy('created_at','ASC')->get();
-    //     foreach ($get as $key => $val)
-    //     {
-    //         $chart_data[] = array(
-    //             'period' => $val->created_at,
-    //             'student' => $val->student_id,
-    //             'uploadfile' => $val->student_uploadfile,
-    //             'uploadimage' => $val->student_uploadimage,
-    //             'faculty' => $val->faculty_name
-    //         ); 
-    //     }
-    //     echo $data = json_encode($chart_data);
-    // }
+    
     public function dowload_zip(Request $request)
     {
         $getDataStudent = Student::all()->where('active' ,'=', '1');
