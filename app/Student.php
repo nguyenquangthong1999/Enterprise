@@ -18,3 +18,5 @@ class Student extends Model
     protected $primaryKey = 'student_id';
  	protected $table = 'student';
 }
+
+

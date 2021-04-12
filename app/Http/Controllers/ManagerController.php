@@ -11,6 +11,9 @@ use App\Coordinator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use ZipArchive;
+use File;
+
 class ManagerController extends Controller
 {
     public function ManagerDashboard(){
@@ -19,9 +22,9 @@ class ManagerController extends Controller
         $semester = Semester::all()->count();
         $faculty = Faculty::all()->count();
         //get data from contribution IT
-        $contributionIT = Student::all()->where('faculity_name' ,'=', 'Information Technology')->count(); 
+        $contributionIT = Student::all()->where('faculity_name' ,'=', 'IT')->count(); 
         $contributionBS = Student::all()->where('faculity_name' ,'=', 'Business')->count();
-         $contributionVV = Student::all()->where('faculity_name' ,'=', 'Vovinam')->count();
+        $contributionVV = Student::all()->where('faculity_name' ,'=', 'Vovinam')->count();
         $contributionDesign = Student::all()->where('faculity_name' ,'=', 'Design')->count();
         $contributionMarketing = Student::all()->where('faculity_name' ,'=', 'Marketing')->count();
         $coordinator = Coordinator::all()->count();
@@ -40,11 +43,11 @@ class ManagerController extends Controller
         $semester = Semester::all()->count();
         $faculty = Faculty::all()->count();
         //get data from contribution IT
-        $contributionIT = Student::all()->where('faculity_name' ,'=', 'Information Technology')->count(); 
-        $contributionBS = Student::all()->where('faculity_name' ,'=', 'Business')->count();
-         $contributionVV = Student::all()->where('faculity_name' ,'=', 'Vovinam')->count();
-        $contributionDesign = Student::all()->where('faculity_name' ,'=', 'Design')->count();
-        $contributionMarketing = Student::all()->where('faculity_name' ,'=', 'Marketing')->count();
+        $contributionIT = Student::all()->where('faculity_name' ,'=', 'IT')->count(); 
+        $contributionBS = Student::all()->where('faculity_name' ,'=', 'BI')->count();
+         $contributionVV = Student::all()->where('faculity_name' ,'=', 'VOV')->count();
+        $contributionDesign = Student::all()->where('faculity_name' ,'=', 'DE')->count();
+        $contributionMarketing = Student::all()->where('faculity_name' ,'=', 'MK')->count();
         $coordinator = Coordinator::all()->count();
         $created = DB::table('student')
                 ->whereYear('created_at', '2021')
@@ -72,4 +75,55 @@ class ManagerController extends Controller
     //     }
     //     echo $data = json_encode($chart_data);
     // }
+    public function dowload_zip(Request $request)
+    {
+        $getDataStudent = Student::all()->where('active' ,'=', '1');
+        $contribution = Student::all()->count();
+        $semester = Semester::all()->count();
+        $faculty = Faculty::all()->count();
+        //get data from contribution IT
+        $contributionIT = Student::all()->where('faculity_name' ,'=', 'IT')->count(); 
+        $contributionBS = Student::all()->where('faculity_name' ,'=', 'Business')->count();
+        $contributionVV = Student::all()->where('faculity_name' ,'=', 'Vovinam')->count();
+        $contributionDesign = Student::all()->where('faculity_name' ,'=', 'Design')->count();
+        $contributionMarketing = Student::all()->where('faculity_name' ,'=', 'Marketing')->count();
+        $coordinator = Coordinator::all()->count();
+        $created = DB::table('student')
+                ->whereYear('created_at', '2021')
+                ->get()
+                ->count();
+        return view('marketing_manager.function.dowload_zip', compact('getDataStudent', 'contribution' ,'semester','faculty','coordinator','contributionIT','contributionBS','contributionDesign' ,'contributionMarketing','contributionVV','created'));
+        
+        // o day se~ viet dowload zip ne
+        
+       
+
+    }
+    public function downloadZip()
+    {
+       
+        $zip = new ZipArchive;
+   
+        $fileName  = 'myNewFile.zip';
+   
+        if ($zip->open(public_path($fileName ), ZipArchive::CREATE) === TRUE)
+        {
+            $files = File::files(public_path('uploadfile'));
+   
+            foreach ($files as $key => $value) {
+                $relativeNameInZipFile = basename($value);
+                $zip->addFile($value, $relativeNameInZipFile);
+            }
+             
+            $zip->close();
+        }
+    
+        return response()->download(public_path($fileName));
+
+    }
+      
 }
+
+
+   
+

@@ -69,6 +69,13 @@ Route::patch('semester/{id}' , 'SemesterController@editSemesterProcess');
 Route::get('manager','ManagerController@ManagerDashboard')->name('MANAGER');
 Route::get('statistics','ManagerController@ViewStatistics')->name('STATISTICS');
 Route::post('/filter-by-date','ManagerController@filter_by_date');
+Route::get('dowload','ManagerController@dowload_zip')->name('DOWLOAD_ZIP');
+// Route::get('/dowloadzip', function(){
+//     $file = public_path()
+// });
+
+Route::get('downloadZip', 'ManagerController@downloadZip');
+
 
 //Guest Controller
 
