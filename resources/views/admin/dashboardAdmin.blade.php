@@ -57,23 +57,7 @@
           <ul class="nav nav-treeview">
           </ul>
         </li>
-        <li class="nav-item has-treeview">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-book"></i>
-            <p>
-              Semester
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{route('MANAGEMENT_SEMESTER')}}" class="nav-link">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Semester Management</p>
-              </a>
-            </li>
-          </ul>
-        </li>
+       
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-book-reader"></i>

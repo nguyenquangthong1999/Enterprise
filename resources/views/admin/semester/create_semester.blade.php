@@ -1,5 +1,5 @@
-@extends('admin/dashboardAdmin')
-@section('admin_content')
+@extends('coordinatorFE/dashboardCoordinator')
+@section('coordinator_content')
 <section class="content-header">
     <div class="container-fluid">
       <div class="row mb-2">
