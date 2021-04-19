@@ -33,7 +33,7 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Coordinator Name</label>
-                  <input type="text" name="namecoordinator" class="form-control" placeholder="Enter Coordinator Name" value="{{$coordinator->cordinator_name}}">
+                  <input type="text" name="namecoordinator" class="form-control" placeholder="Enter Coordinator Name" value="{{$coordinator->cordinator_name}}" required>
                 </div>
                 <div class="form-group">
                   <label for="">Faculty</label>

@@ -43,12 +43,12 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Coordinator Name</label>
-                  <input type="text" name="namecoordinator" class="form-control" placeholder="Enter Coordinator Name">
+                  <input type="text" name="namecoordinator" class="form-control" placeholder="Enter Coordinator Name" required>
                 </div>
                 <div class="form-group">
                   <label for="">Faculty</label>
-                  <select class="form-control" id ="faculty" name="faculity_name">
-                    <option>Select Falcuty</option>
+                  <select class="form-control" id ="faculty" name="faculity_name" required>
+                    <option selected>Select Falcuty</option>
                     @foreach($faculity as $item)
                     <option value="{{$item -> faculity_name}}">{{$item -> faculity_name}}</option>
                     @endforeach

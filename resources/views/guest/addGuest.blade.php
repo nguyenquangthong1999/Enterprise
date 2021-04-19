@@ -32,7 +32,7 @@
               <div class="card-body">
                 <div class="form-group">
                   <label for="">Email</label>
-                  <select class="form-control" name="email">
+                  <select class="form-control" name="email" required>
                     <option>Select Guest For Faculity</option>
                     @foreach($data as $datas)
                       @if($datas->account_number == 1)
@@ -43,11 +43,11 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Guest Name</label>
-                  <input type="text" name="nameguest" class="form-control" placeholder="Enter Guest Name">
+                  <input type="text" name="nameguest" class="form-control" placeholder="Enter Guest Name" required>
                 </div>
                 <div class="form-group">
                   <label for="">Faculty</label>
-                  <select class="form-control" id ="faculty" name="faculity_name">
+                  <select class="form-control" id ="faculty" name="faculity_name" required>
                     <option>Select Falcuty</option>
                     @foreach($faculty as $item)
                     <option value="{{$item -> faculity_name}}">{{$item -> faculity_name}}</option>
